@@ -19,7 +19,7 @@
 - receive and respond to queries (access to financial news)
 - AI and personalisation
 
-###Minutes
+### Minutes
 Need software at the end, more to this module than project management
 
 - design can change after week 5 report
