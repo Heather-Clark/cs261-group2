@@ -1,9 +1,13 @@
 # Software Engineering
-## 12:00 17/01/18 - Meeting 2
+## 12:00 - 13:00, 17/01/18 - Meeting 2
 ### Agenda
 - review research
+- concrete organisation plan that will be written up in our report
 - draft plan for software
 - reports
+    - work out sections
+    - split up who is doing what sections
     - start drafting
-- next meeting (this week preferably) 
-- week 3 meeting with Richard
+- future
+    - next meeting (this week preferably)
+    - week 3 meeting with Richard

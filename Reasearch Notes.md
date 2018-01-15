@@ -1,3 +1,7 @@
+### Organisational notes
+- agile
+- get prototype done, get feedback 
+
 ### Getting data
 - Need API to get the numbers
 - Need list of ftse 100 companies
