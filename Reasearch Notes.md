@@ -30,6 +30,17 @@ APIs:
 - https://developer.yahoo.com/finance/
     - news only
     - need list of ticker symbols of ftse 100 companies
+    
+- https://github.com/deanchester/footsie
+    - Dean Chester (tutor) python code scrapes data from FTSE 100 feed, shared by Jarvis in forum
+    
+- https://arcane-citadel-48781.herokuapp.com
+    - RSS feed of FTSE 100 feed (used in Dean Chester's code), updates every 15 minutes
+    
+- http://feeds.bbci.co.uk/news/business/rss.xml
+- http://feeds.bbci.co.uk/news/uk/rss.xml
+- http://www.telegraph.co.uk/business/rss.xml
+    - Might be good to also consider more UK-centric feeds
 
 ### Questions
 - fairly exhaustive list of financial questions is required to be generated.
