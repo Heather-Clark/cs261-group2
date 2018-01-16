@@ -14,3 +14,4 @@
 - future
     - next meeting (this week preferably)
     - week 3 meeting with Richard
+- Set production goals
