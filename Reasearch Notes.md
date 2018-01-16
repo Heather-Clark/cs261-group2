@@ -5,6 +5,7 @@
 ### Getting data
 - Need API to get the numbers
 - Need list of ftse 100 companies
+- Need to be able tp parse the numbers correctly to return the correct information
 
 #### APIs and Relevant Info
 general info:
@@ -32,3 +33,21 @@ APIs:
 
 ### Questions
 - fairly exhaustive list of financial questions is required to be generated.
+- Has to know definitions of trading termonology, more than the average person. 
+- May need to be programmed to understand "compound" sentences, where more than one thing is asked in one query.
+- Understand some questions unrelated to trading, for example asking it to display the result on the screen rather than speak it out.
+
+### AI Learning
+- probably should depend only on past queries for predictions rather than data mining, as it's safer and easier to implement.
+- proactivity has to be careful, as being bothered about things the chatbox thinks are important but aren't doesn't leave a happy user
+- The AI could ask questions from the user to learn if it is on the right track or not, similar to how Siri or Cortana have preferences and settings. https://www.ft.com/content/4f2f97ea-b8ec-11e4-b8e6-00144feab7de
+- As asked in one of the bank presentations, should probably keep a list of "favourite" questions so the user doesn't have to ask the same question every day.
+- Potentially try and find common industry interests of the user. For example if they are interested in tech companies versus supermarket chains. 
+
+### Must haves 
+- Ability to deal with the data it processes, and present it to the user in an appealing way: voice or visually.
+- Interact with user
+- Learn from the user
+
+### Could haves 
+- Look out for a spike in news coverage in areas of interest, as it may indicate something is happening
