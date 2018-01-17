@@ -8,10 +8,11 @@
 - Need to be able tp parse the numbers correctly to return the correct information
 
 #### APIs and Relevant Info
-general info:
+##### general info:
 - http://www.hl.co.uk/shares/stock-market-summary/ftse-100
 
-APIs:
+##### APIs:
+###### Finance Related 
 - https://www.quandl.com/tools/api
     - student version available?
 
@@ -48,11 +49,22 @@ APIs:
     - Shouldn't be too hard as the JSON object arrays of high, low, close and open line up with a returned array of timestamps.
         - These timestamps are in Epoch/Unix Time so it's quite easy to discern when this data was collected.
 
+###### Language Processing/ChatBot:
 - https://cloud.google.com/natural-language/
     - All our language processing needs, testing the API in the window seems to be more optimised for large bodies of text, so maybe use it to analyse news articles to give a gist/summary.
 
 - http://www.nltk.org/
     - Language processing in Python, dream come true.
+    - Need to manually analyse the lingustics though, cba.
+
+- https://github.com/gunthercox/ChatterBot
+    - Trainable Chatbot AI w/ Deep Learning.
+    - Seems a little complex.
+
+- https://www.ibm.com/watson/index.html
+    - The Dream
+    - Apparently has a free API, needs investigation.
+    - Probably most complex.
 
 ### Questions
 - fairly exhaustive list of financial questions is required to be generated.
