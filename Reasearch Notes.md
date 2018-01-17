@@ -10,6 +10,8 @@
 #### APIs and Relevant Info
 ##### general info:
 - http://www.hl.co.uk/shares/stock-market-summary/ftse-100
+- www.investopedia.com
+    - Like an investment-specific Wikipedia
 
 ##### APIs:
 ###### Finance Related 
