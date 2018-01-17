@@ -42,6 +42,18 @@ APIs:
 - http://www.telegraph.co.uk/business/rss.xml
     - Might be good to also consider more UK-centric feeds
 
+- https://query1.finance.yahoo.com/v8/finance/chart/TSCO.L?range=1d&includePrePost=false&interval=2m&corsDomain=finance.yahoo.com&.tsrc=finance
+    - Extracted from Yahoo Finance pages, provides up to date info within 1 minute and very flexible to search ranges, just need to plug in our own options in the ticker part (where it says `TSCO.L`), range and interval.
+    - More importantly, provides more information to us than Chester's scrubber, but we need to manually send the requests to yahoo and scrub the data.
+    - Shouldn't be too hard as the JSON object arrays of high, low, close and open line up with a returned array of timestamps.
+        - These timestamps are in Epoch/Unix Time so it's quite easy to discern when this data was collected.
+
+- https://cloud.google.com/natural-language/
+    - All our language processing needs, testing the API in the window seems to be more optimised for large bodies of text, so maybe use it to analyse news articles to give a gist/summary.
+
+- http://www.nltk.org/
+    - Language processing in Python, dream come true.
+
 ### Questions
 - fairly exhaustive list of financial questions is required to be generated.
 - Has to know definitions of trading termonology, more than the average person. 
