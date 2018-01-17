@@ -1,4 +1,9 @@
 ### Organisational notes
+- We need a plan for baseline systems
+    - Agile methods can be used at a lower level and for extensions
+- Software re-use is key.
+- Focus on having working modules
+- Interface is very important
 - agile
 - get prototype done, get feedback 
 
