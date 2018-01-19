@@ -1,5 +1,5 @@
 # Situation Analysis - Needs Major Cleaning
-
+# Understanding of Specification
 ## Access and Interface with FTSE 100 Stocks
 - Stock Data within 1 minute interval
 - Multi-stock support in terms of Sector/Industry
@@ -17,7 +17,7 @@
 	- Change incl %
 	- Open/Close
 	- Volume i.e. amount traded in a set period of time
-		
+
 ## Queries from Users
 - Simple user interface to search for exactly what they want, so they don't have to rely on just the language processing module.
 - Info on stocks over periods of time.
@@ -31,11 +31,11 @@
 - News data on companies/industries
 	- Use of Yahoo Finance News feed is useful here.
 	- Sentiment Analysis - Basically quantitative analysis of public opinion and news surrounding different industries/companies.
-- Alpha: Your profit relative to the stock market i.e. you percentage gain compared to the FTSE 100 in our case. 
+- Alpha: Your profit relative to the stock market i.e. you percentage gain compared to the FTSE 100 in our case.
 
 ## AI/Chatbot
 - Adapt to news
-- Predict changes in stocks using trends 
+- Predict changes in stocks using trends
 	- Also stealing rating data from other sites
 - Provide automated notifications at set time periods or when something drastic occurs
 - Summary Data/Digest on Stocks
@@ -45,4 +45,33 @@
 - Provide advice for buying, selling and holding
 - Language Processing
 	- Start with simple, non-compound statements. Basic APIs from Google can deconstruct and select the keywords we need.
-	
+
+# Group Management Decisions
+
+Split the team into specific roles:
+- project manger = Heather
+- business analysis = Adam
+- Financial analysis  = Jay
+- lead developer - AI + chat bot = Amber
+- quality assurance and testing = Suzy
+
+These are more the area where each person will take a lead, as we will be using plan based so the project will be split up.
+
+plan based approach for core specification requirements:
+- design
+- seek customer feedback
+- implementation
+- testing
+- prototype
+- show prototype to customer for feedback
+- incorporate feedback
+
+For optional requirements a more agile approach will be taken
+
+Reasons;
+- inexperience with software projects
+- allow for research time and to become familiar with the technology available
+- optional requirements will be started later in the project when group is more familiar with how and what to do
+- plan based fits well with giving every member a role
+
+Weekly meetings at minimum, further optional meetings later into the project when there are more concrete tasks being allocated, allowing for group work. Allow for more efficient working. 
