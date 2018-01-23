@@ -58,6 +58,20 @@
     - More importantly, provides more information to us than Chester's scrubber, but we need to manually send the requests to yahoo and scrub the data.
     - Shouldn't be too hard as the JSON object arrays of high, low, close and open line up with a returned array of timestamps.
         - These timestamps are in Epoch/Unix Time so it's quite easy to discern when this data was collected.
+        
+- https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+    - Beautiful soup allows nice scrubbing of websites by taking the html doc and storing it in a "Beautiful Soup" object. This object basically nests the strings in a data structure similar to how javascript access nested tags. Should make it easy to find what we need.
+ 
+- https://github.com/deanchester/footsie
+    - Scrubs http://www.londonstockexchange.com/ website data for stocks of the FTSE 100.
+    - Delayed by 15 minutes consistently.
+    - Unclear when the diff/%diff is compartive timewise, probably from when trading opened for the day but unclear.
+    - Can use as the base for our own website scrubber (see bs4).
+
+- Yahoo Streamer API
+    - https://apimeister.com/2008/12/02/use-yahoo-finance-streaming-api.html
+    - https://streamerapi.finance.yahoo.com/streamer/1.0?s=BTC-GBP,CL=F,GBPEUR=X,GBPUSD=X,GC=F,TSCO.L,^DJI,^FCHI,^FTAI,^FTMC,^FTSE,^GDAXI,^GSPC,^HSI,^N225&k=c64,p44,l86,t54,c63,p43,l84,t53&callback=parent.yfs_u1f&mktmcb=parent.yfs_mktmcb&gencallback=parent.yfs_gencb&mu=1&lang=en-GB&region=GB&localize=0
+    - More research needed.
 
 ###### Language Processing/ChatBot:
 - https://cloud.google.com/natural-language/
