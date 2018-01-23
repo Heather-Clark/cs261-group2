@@ -54,6 +54,7 @@ Split the team into specific roles:
 - Financial analysis  = Jay
 - lead developer - AI + chat bot = Amber
 - quality assurance and testing = Suzy
+- web master = Ash
 
 These are more the area where each person will take a lead, as we will be using plan based so the project will be split up.
 
@@ -74,4 +75,4 @@ Reasons;
 - optional requirements will be started later in the project when group is more familiar with how and what to do
 - plan based fits well with giving every member a role
 
-Weekly meetings at minimum, further optional meetings later into the project when there are more concrete tasks being allocated, allowing for group work. Allow for more efficient working. 
+Weekly meetings at minimum, further optional meetings later into the project when there are more concrete tasks being allocated, allowing for group work. Allow for more efficient working.
