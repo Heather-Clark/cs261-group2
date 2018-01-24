@@ -74,5 +74,6 @@ Reasons;
 - allow for research time and to become familiar with the technology available
 - optional requirements will be started later in the project when group is more familiar with how and what to do
 - plan based fits well with giving every member a role
+- allows for flexible approach if client modifies specifications of project
 
 Weekly meetings at minimum, further optional meetings later into the project when there are more concrete tasks being allocated, allowing for group work. Allow for more efficient working.
