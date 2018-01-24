@@ -10,11 +10,23 @@ Should be able to handle things that are outlined in the slides. For complex ana
 
 Either format for tlaking about group roles is fine. Life will be easier if different people do different things, and everybody knows each other's tasks. Not everyone on front end, some people on back end. That's management, how that is presented in the report is up to you. Could have the person responsible for a section introduced while discussing the section. 
 
+This report is all design choice. How we want to do the AI, interface, is all up to us. Language, desktop based, mobile based, web based is up to us. Being cross-platform is up to us as well. 
 
 Q: How do DB track/ store portfolios? (Could look to support csv file upload or similar)
 
+Not gonna get an example set of portfolios. Would be a very nice extension. Build a portfolio management system in this app, and provide dummy data with a set of stocks on each one. Would be impressive. But it is an extra. 
+
+On a side, are extras in the requirements analysis on the design document? Design document, but state this is not a promise. Very much could have, if there is enoughg time. 
+
 Q: While security isn't a prototype concern, should it be discussed in the reports?
+
+Hard one. Talk how we would implement it, but don't implement it. The thing with security is it's hard to do with the time frame. Say why it is not a focus, say what we would do in the requirements document. NOT in the plan for the program.
 
 Q: Is there an exhaustive list of calculation based (or those that require lots of processing) queries our chatbot should be able to deal with?
 
 Q: UI size and style, are there any specific criteria? How much screen space should be aim to use? 
+
+
+
+Week 4: 1:30pm, same time next week. Give draft of deliverables before then so it can be reviewed in more detail than if it is presented on the day of. Main reason for the meeting in week 4. Week 4, give draft of anything we have. Want to make sure we're on the right track and we aren't overreaching. 
+Wedensday Week 4 is stuff on risk management. Not expected in this check, just focusing on working as a team and everyone knows what they\re supposed to be doing.
