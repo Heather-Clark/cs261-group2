@@ -1,5 +1,3 @@
-Meeting 5
-
 # Software Engineering
 ## 31/01/18 - Meeting 5
 
