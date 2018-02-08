@@ -1,0 +1,31 @@
+| Getting basic statistics.
+What is the current spot price for 3i Group?
+What is the current trading volume for Carnival?
+What is the percentage change in BP since the market opened?
+What was the spot price for HSBC at the start of February 2000?
+What was the trading volume for Morrisons at the start of May 2013?
+Has Astra Zenica risen this week?
+Has Aviva fallen this week?
+How much profit has Informa made this period?
+What EPS did RSA make last year? | Yes I have no fucking clue what an EPS is.
+What was the dividend per share last month of Burberry? | Technically doesn't matter (it's yearly, so a month won't make a difference, but still).
+
+| Group statistics.
+Are Pharmaceuticals rising or falling?
+How is Aerospace and Defense performing this morning?
+Which Gas, Water and Multiutilities are rising right now?
+
+| News related stuff.
+Is there news on General Retailers this morning?
+Are Oil and Gas Producers in the news?
+Is the news on Royal Dutch Shell positive or negative?
+
+| Comparative queries.
+Is Sainsbury's doing better than SSE this week?
+Which of NMC Health and Smiths Group has risen more today?
+Did Unilever do better than ITV last month?
+
+| Subjective queries.
+What should I invest in?
+Should I invest in Tesco?
+Which of the Pharmaceuticals is doing the best?
