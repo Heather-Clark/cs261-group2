@@ -1,50 +1,140 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.29)  9 FEB 2018 00:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.29)  9 FEB 2018 12:10
 entering extended mode
 **./ReqA.tex
 (ReqA.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
-Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ieeetran\IEEEtran.cls"
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
-\abovecaptionskip=\skip41
-\belowcaptionskip=\skip42
-\bibindent=\dimen102
-)
-("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\IEEEPARstartletwidth=\dimen125
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks14
-\verbatim@line=\toks15
+\every@verbatim=\toks15
+\verbatim@line=\toks16
 \verbatim@in@stream=\read1
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip43
-\multirow@cntb=\count87
-\multirow@dima=\skip44
-\bigstrutjot=\dimen103
+\multirow@colwidth=\skip44
+\multirow@cntb=\count94
+\multirow@dima=\skip45
+\bigstrutjot=\dimen126
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen104
-\extrarowheight=\dimen105
-\NC@list=\toks16
-\extratabsurround=\skip45
-\backup@length=\skip46
+\col@sep=\dimen127
+\extrarowheight=\dimen128
+\NC@list=\toks17
+\extratabsurround=\skip46
+\backup@length=\skip47
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -63,14 +153,14 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count88
+\Gread@gobject=\count95
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
-\everycr=\toks17
-\minrowclearance=\skip47
+\everycr=\toks18
+\minrowclearance=\skip48
 )
-\rownum=\count89
+\rownum=\count96
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -83,8 +173,8 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks18
-\inpenc@posthook=\toks19
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
@@ -401,28 +491,28 @@ Now handling font encoding U ...
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\longtable.sty"
 Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
-\LTleft=\skip48
-\LTright=\skip49
-\LTpre=\skip50
-\LTpost=\skip51
-\LTchunksize=\count90
-\LTcapwidth=\dimen106
-\LT@head=\box26
-\LT@firsthead=\box27
-\LT@foot=\box28
-\LT@lastfoot=\box29
-\LT@cols=\count91
-\LT@rows=\count92
-\c@LT@tables=\count93
-\c@LT@chunks=\count94
-\LT@p@ftn=\toks20
+\LTleft=\skip49
+\LTright=\skip50
+\LTpre=\skip51
+\LTpost=\skip52
+\LTchunksize=\count97
+\LTcapwidth=\dimen129
+\LT@head=\box28
+\LT@firsthead=\box29
+\LT@foot=\box30
+\LT@lastfoot=\box31
+\LT@cols=\count98
+\LT@rows=\count99
+\c@LT@tables=\count100
+\c@LT@chunks=\count101
+\LT@p@ftn=\toks21
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks21
+\KV@toks@=\toks22
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
@@ -434,52 +524,49 @@ Package ifvtex Info: VTeX not detected.
 ("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count95
-\Gm@cntv=\count96
-\c@Gm@tempcnt=\count97
-\Gm@bindingoffset=\dimen107
-\Gm@wd@mp=\dimen108
-\Gm@odd@mp=\dimen109
-\Gm@even@mp=\dimen110
-\Gm@layoutwidth=\dimen111
-\Gm@layoutheight=\dimen112
-\Gm@layouthoffset=\dimen113
-\Gm@layoutvoffset=\dimen114
-\Gm@dimlist=\toks22
+\Gm@cnth=\count102
+\Gm@cntv=\count103
+\c@Gm@tempcnt=\count104
+\Gm@bindingoffset=\dimen130
+\Gm@wd@mp=\dimen131
+\Gm@odd@mp=\dimen132
+\Gm@even@mp=\dimen133
+\Gm@layoutwidth=\dimen134
+\Gm@layoutheight=\dimen135
+\Gm@layouthoffset=\dimen136
+\Gm@layoutvoffset=\dimen137
+\Gm@dimlist=\toks23
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
-
-LaTeX Warning: Unused global option(s):
-    [9pt].
-
-(ReqA.aux)
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg")) (ReqA.aux)
 \openout1 = `ReqA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+
+-- Lines per column: 60 (approximate, difference = 2.7pt).
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count98
-\scratchdimen=\dimen115
-\scratchbox=\box30
-\nofMPsegments=\count99
-\nofMParguments=\count100
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count101
-\MPscratchDim=\dimen116
-\MPnumerator=\count102
-\makeMPintoPDFobject=\count103
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count105
+\scratchdimen=\dimen138
+\scratchbox=\box32
+\nofMPsegments=\count106
+\nofMParguments=\count107
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count108
+\MPscratchDim=\dimen139
+\MPnumerator=\count109
+\makeMPintoPDFobject=\count110
+\everyMPtoPDFconversion=\toks25
 )
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -497,213 +584,211 @@ LaTeX Font Info:    ... okay on input line 17.
 * \textheight=722.7pt
 * \oddsidemargin=-36.135pt
 * \evensidemargin=-36.135pt
-* \topmargin=-73.135pt
+* \topmargin=-69.47699pt
 * \headheight=12.0pt
-* \headsep=25.0pt
-* \topskip=10.0pt
-* \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
-* \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \headsep=21.342pt
+* \topskip=12.0pt
+* \footskip=25.80774pt
+* \marginparwidth=20.0pt
+* \marginparsep=10.0pt
+* \columnsep=12.0pt
+* \skip\footins=10.79993pt plus 4.79993pt minus 2.39996pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
-* \@twocolumnfalse
+* \@twocolumntrue
 * \@twosidefalse
 * \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 19.
+(Font)              <7> on input line 32.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 19.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 19.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 30.
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 53.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 53.
+(Font)              <5> on input line 32.
 
-Overfull \hbox (4.66257pt too wide) in paragraph at lines 53--54
-[]|\OT1/cmr/m/n/10 Cat.| 
+Overfull \hbox (2.16339pt too wide) in paragraph at lines 55--56
+[]|\OT1/ptm/m/n/10 Cat.| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--72
-[]|\OT1/cmr/m/n/10 R1.3 Multi-stock
+Underfull \hbox (badness 3417) in paragraph at lines 60--60
+[]|\OT1/ptm/m/n/10 R1.1 Sim-ple stock
  []
 
 
-Underfull \hbox (badness 3229) in paragraph at lines 79--79
-[]|\OT1/cmr/m/n/10 R1.4 Graphs and
+Overfull \hbox (1.32344pt too wide) in paragraph at lines 63--64
+[]|\OT1/ptm/m/n/10 [M]| 
  []
 
 
-Underfull \hbox (badness 1527) in paragraph at lines 105--105
-[]|\OT1/cmr/m/n/10 Frequently asked and user-defined queries
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+[]|\OT1/ptm/m/n/10 R1.3 Multi-stock
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--111
-[]|\OT1/cmr/m/n/10 R2.2 Queries on
+Underfull \hbox (badness 2384) in paragraph at lines 95--95
+[]|\OT1/ptm/m/n/10 R1.6 Fur-ther stock
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 125--125
-[]|\OT1/cmr/m/n/10 R2.2.2 Cur-rency
+Underfull \hbox (badness 10000) in paragraph at lines 113--113
+[]|\OT1/ptm/m/n/10 R2.2 Queries on
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--132
-[]|\OT1/cmr/m/n/10 R2.2.3 News
+Overfull \hbox (1.32344pt too wide) in paragraph at lines 116--117
+[]|\OT1/ptm/m/n/10 [M]| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-[]|\OT1/cmr/m/n/10 Automated Query for im-por-tant
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
+[]|\OT1/ptm/m/n/10 R2.2.2 Cur-rency
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
-\OT1/cmr/m/n/10 stocks/commodities/currencies over the
+Overfull \hbox (1.32344pt too wide) in paragraph at lines 137--138
+[]|\OT1/ptm/m/n/10 [M]| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 157--157
-[]|\OT1/cmr/m/n/10 R3.2 Lan-guage
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
+[]|\OT1/ptm/m/n/10 Automated Query for im-por-tant
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--164
-[]|\OT1/cmr/m/n/10 R3.2.1 Sim-ple
+Overfull \hbox (1.32344pt too wide) in paragraph at lines 162--163
+[]|\OT1/ptm/m/n/10 [M]| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--171
-[]|\OT1/cmr/m/n/10 R3.2.2 Ad-vanced
+Overfull \hbox (1.32344pt too wide) in paragraph at lines 169--170
+[]|\OT1/ptm/m/n/10 [M]| 
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 171--171
-\OT1/cmr/m/n/10 state-ment pro-cess-
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
+[]|\OT1/ptm/m/n/10 R3.2.2 Ad-vanced
  []
 
 
-Overfull \hbox (5.89815pt too wide) in alignment at lines 51--175
+Overfull \hbox (5.89815pt too wide) in alignment at lines 53--177
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 175
+Underfull \vbox (badness 10000) detected at line 177
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
-\OT1/cmr/m/n/10 learn about the
+Underfull \hbox (badness 4024) in paragraph at lines 180--180
+[]|\OT1/ptm/m/n/10 R3.3 Sys-tem must
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--185
-[]|\OT1/cmr/m/n/10 R3.3.1 Port-fo-lio
+Overfull \hbox (1.32344pt too wide) in paragraph at lines 183--184
+[]|\OT1/ptm/m/n/10 [M]| 
  []
 
 
-Underfull \hbox (badness 1194) in paragraph at lines 186--186
-\OT1/cmr/m/n/10 ei-ther by sim-ple in-put or mon-i-tor-ing us-
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
+[]|\OT1/ptm/m/n/10 R3.3.2 Favourites
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--192
-[]|\OT1/cmr/m/n/10 R3.3.2 Favourites
- []
-
-
-Overfull \hbox (5.89815pt too wide) in alignment at lines 175--199
+Overfull \hbox (5.89815pt too wide) in alignment at lines 177--201
  [] [] [] [] 
  []
 
-[1
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-Overfull \hbox (4.66257pt too wide) in paragraph at lines 209--210
-[]|\OT1/cmr/m/n/10 Cat.| 
+
+] [2]
+Overfull \hbox (2.16339pt too wide) in paragraph at lines 211--212
+[]|\OT1/ptm/m/n/10 Cat.| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--231
-[]|\OT1/cmr/m/n/10 R4.3 Doc-u-men-ta-
+Underfull \hbox (badness 4543) in paragraph at lines 219--219
+[]|\OT1/ptm/m/n/10 R4.1 In-tu-itive De-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--242
-[]|\OT1/cmr/m/n/10 R5.1 Your sys-
+Overfull \hbox (1.32344pt too wide) in paragraph at lines 222--223
+[]|\OT1/ptm/m/n/10 [M]| 
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 242--242
-\OT1/cmr/m/n/10 tem must re-main
+Underfull \hbox (badness 6316) in paragraph at lines 244--244
+[]|\OT1/ptm/m/n/10 R5.1 Your sys-tem
  []
 
 
-Underfull \hbox (badness 5475) in paragraph at lines 249--249
-[]|\OT1/cmr/m/n/10 R5.1 Sys-tem up-
+Overfull \hbox (1.32344pt too wide) in paragraph at lines 265--266
+[]|\OT1/ptm/m/n/10 [M]| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--292
-[]|\OT1/cmr/m/n/10 R8 Cross-device
+Overfull \hbox (1.32344pt too wide) in paragraph at lines 290--291
+[]|\OT1/ptm/m/n/10 [M]| 
  []
 
 
-Underfull \hbox (badness 1735) in paragraph at lines 299--299
-[]|\OT1/cmr/m/n/10 R9 Free-dom from
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
+[]|\OT1/ptm/m/n/10 R8 Cross-device
  []
 
 
-Overfull \hbox (1.60701pt too wide) in paragraph at lines 309--310
-[]|\OT1/cmr/m/n/10 [W]| 
+Underfull \hbox (badness 5189) in paragraph at lines 301--301
+\OT1/ptm/m/n/10 gal, so-cial, eth-i-cal
  []
 
 
-Overfull \hbox (1.60701pt too wide) in paragraph at lines 316--317
-[]|\OT1/cmr/m/n/10 [W]| 
+Overfull \hbox (1.32344pt too wide) in paragraph at lines 304--305
+[]|\OT1/ptm/m/n/10 [M]| 
  []
 
 
-Overfull \hbox (5.89815pt too wide) in alignment at lines 205--320
+Overfull \hbox (1.87349pt too wide) in paragraph at lines 311--312
+[]|\OT1/ptm/m/n/10 [W]| 
+ []
+
+
+Overfull \hbox (1.87349pt too wide) in paragraph at lines 318--319
+[]|\OT1/ptm/m/n/10 [W]| 
+ []
+
+
+Overfull \hbox (5.89815pt too wide) in alignment at lines 207--322
  [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 320
+Underfull \vbox (badness 10000) detected at line 322
  []
 
-[3] (ReqA.bbl) [4] (ReqA.aux) ) 
+[3] (ReqA.bbl
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 26.
+) [4] (ReqA.aux) ) 
 Here is how much of TeX's memory you used:
- 2598 strings out of 493323
- 32269 string characters out of 3139059
- 146575 words of memory out of 3000000
- 6127 multiletter control sequences out of 15000+200000
- 7895 words of font info for 28 fonts, out of 3000000 for 9000
+ 3398 strings out of 493323
+ 48724 string characters out of 3139059
+ 162518 words of memory out of 3000000
+ 6922 multiletter control sequences out of 15000+200000
+ 34812 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,8n,35p,430b,267s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr1
-0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on ReqA.pdf (4 pages, 106452 bytes).
+ 41i,8n,35p,430b,336s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/ti
+mes/utmri8a.pfb>
+Output written on ReqA.pdf (4 pages, 66402 bytes).
 PDF statistics:
- 39 PDF objects out of 1000 (max. 8388607)
+ 32 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
