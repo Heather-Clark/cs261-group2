@@ -14,7 +14,6 @@
 
 \begin{document}
 	\maketitle
-
 	\section{Introduction}
 	This document contains the plan, design and implementation details for the development of a virtual trading assistant for use by traders at Deutsche Bank. The software will take a query for information as input from the trader and output the requested information. The scope of the information returned is data related to the FTSE 100 and the news. The trading assistant will use artificial intelligence to become personalised for the user.
 	
@@ -85,6 +84,7 @@ The preceding plans are an overestimation of the amount of time it will take to 
 	
 	\section{Risk Analysis}
 	For this project, a risk is split into four risk ratings: low, medium, high and extreme which are represented by number ranges 1-2, 3-6, 7-10 and 11-12 respectively. These are calculated based the likelihood of the risk occurring (improbable, possible, probable) and the severity (acceptable, tolerable, undesirable, intolerable). \cite{risk}
+	
 	
 	\begin{table*}[h]
 	
@@ -180,7 +180,7 @@ The preceding plans are an overestimation of the amount of time it will take to 
 	\end{tabular}
 	\caption{Table outlining project risks and management strategies}
 \end{table*}
-	
+	\newpage
 	\section{Design}
 	
 The chatbot will be a web based application. Thus, the system will be versatile compared to a traditional application as it will be compatible with any device with access to a modern browser. This is important as it will allow for fast development so the project will be completable within the required time period. Such a system will be straightforward to set up and run as computation is all performed remotely so there are minimal local requirements. It will also support expansion as updates and maintenance can be directly deployed to a server so the client will always be using the newest version. The chatbot requires an internet connection to function and being able to reliability connect to the host server is important. Thus it needs to be hosted by a service with a high uptime. This is why DigitalOcean’s servers will be used, as they have a history of reliably hosting systems with heavy traffic and computational power.
@@ -218,7 +218,7 @@ Interpreting queries and language processing can be split into two main processe
 
 The user interface will use the Bulma CSS framework \cite{bulma}, to maintain a professional and consistent interface. The main non-design component of the user interface is a text query and response panel. Other components of the system will be added both in-line to the responses, and as separate frames of the interface. We chose to present the queries and responses in this manner as the style is akin to other chat based applications.
 
-When designing the UI, many design principles will be considered, and each are outlined in \textbf{TABLE 2}.
+When designing the UI, many design principles will be considered, and each are outlined in \textbf{TABLE II}.
 	\begin{table}[h]
 	\begin{tabular}{| m{2cm} | m{5.5cm} | }
 		\hline
@@ -270,7 +270,7 @@ When designing the UI, many design principles will be considered, and each are o
 	
 	\section{System Models}
 	
-	System models are an easy way of representing how different aspects of a software interact with one another. Each model is a representation of an abstract aspect of the system, with a different perspective. The models are constructed to assist with clearly defining the functionality of the software for both the customer and the development team. For this project a Class Diagram\textit{Figure 2)}, a use case diagram \textit{(Figure 3)}, and a sequence diagram \textit{(Figure 4)}.
+	System models are an easy way of representing how different aspects of a software interact with one another. Each model is a representation of an abstract aspect of the system, with a different perspective. The models are constructed to assist with clearly defining the functionality of the software for both the customer and the development team. For this project a Class Diagram\textit{Fig. 2)}, a use case diagram \textit{(Fig. 3)}, and a sequence diagram \textit{(Fig. 4)}.
 	
 	\begin{figure*}[h]
 		\includegraphics[width=\textwidth, height = 18cm]{classdiagram}
@@ -282,7 +282,7 @@ When designing the UI, many design principles will be considered, and each are o
 		\caption{Use case diagram showing how the user interacts with the software}
 	\end{figure*}
 	
-	These two models are focused on the coding and the user. The third system model is the sequence diagram, which is a detailed view of how each of the subsystems of the software interact with one another and when. The diagram traces the software from the moment a query is asked to the result being returned. This final diagram is located at the end of the document due to its size, labelled \textbf{figure 3 and 4}.
+	These two models are focused on the coding and the user. The third system model is the sequence diagram, which is a detailed view of how each of the subsystems of the software interact with one another and when. The diagram traces the software from the moment a query is asked to the result being returned. This final diagram is located at the end of the document due to its size, labelled \textbf{fig. 3 and 4}.
 	
 	\begin{figure*}[h]
 		\includegraphics[width=\textwidth, height = 20cm]{sequence}
@@ -380,7 +380,7 @@ Development will also be externally validated by communicating with all stakehol
 		
 		
 	\end{tabular}
-	\end{table}[h]
+	\end{table}
 	
 The usability of the system will be tested by presenting the web application to a group of users (who have some level of domain on financial terms and the FTSE 100) and presenting this users with a set of tasks to accomplish on the web application. While they attempt to perform the tasks, they be told to describe verbally their thought process and actions, while being monitored to see where it becomes difficult to understand the intentions of the software or the UI.
 The systems will be checked to be compatible with various browsers; and especially the one preferred by Deutsche Bank traders.  
@@ -396,7 +396,7 @@ Sanity checks at each stage of the system testing will allow the team to quickly
 The success of the project will be measured not only through the tests described previously that detail if the original specification has been met, but also whether it meets the defined expectations. This is a qualitative measure that will be determined through conversing with the customer as much as possible throughout development and through the feedback given following the presentation delivery. 
 
 \section{End of Life and Delivery}
-	Software development will end after the ninth week, where the software will be presented to the client using a live demo. The critical and any implemented optional features will be displayed, and there will be a chance to ask the group questions about the developed software. The software will be in a fully functional state, ready for implementation by the client. 
+	Software development will end after the ninth week, where the software will be presented to the client using a live demo. The critical and any implemented optional features will be displayed, and there will be a chance to ask the group questions about the developed software. The software will be in a fully functional state, having met the specification set by the client. 
 	
 \section{Conclusion}
 	This software is explicitly designed to meet the design requirements. Throughout the document, many different aspects of the software's development were covered, starting from the risks taken and the earliest design to how the completed system will be tested. These points were elaborated and explained using a variety of UML diagrams presenting different views of the software. 
