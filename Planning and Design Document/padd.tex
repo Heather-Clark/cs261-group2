@@ -194,14 +194,17 @@ Available APIs and libraries will be used to take advantage of existing code to 
 The software is a web-based Django app which gathers requested information via a hosted server. By design it is divided up into many distinct parts with interacting functions. A critical consideration for the design is that it does not collapse entirely when there is an error in one of these parts, and errors can be targeted without going through the entire program. To ease maintainability further the software is modelled using existing forms and not one developed solely for the project by the team. The overall system is best described using an event driven model, with the web application subsystem most easily adopted using a model-view-controller (MVC) pattern in the architecture of a Django app. 
 
 \subsection{Overall Architectural Pattern}
-The main function of the chatbot is to collect data for the trader; whether that be upon request or automatically. Both of these scenarios had to be considered when selecting a pattern, and an event-driven model architecture was found to be the best option.  Event driven model is the most appropriate for this software because since the software tracks a live feed of stocks, action occurs when there is a change in the state. For the requested information, event driven model matches the software’s information retrieval sequence: a new state is brought on by actions by the user or information being passed between subsystems.
+The main function of the chatbot is to collect data for the trader; whether that be upon request or automatically. Both of these scenarios had to be considered when selecting a pattern, and an event-driven model architecture was found to be the best option. Event driven model is the most appropriate for this software because since the software tracks a live feed of stocks, action occurs when there is a change in the state. For the requested information, event driven model matches the software’s information retrieval sequence: a new state is brought on by actions by the user or information being passed between subsystems. This illustrated in \textit{Fig. 2}.
 
+\begin{figure}
 \includegraphics[scale=0.12]{BasicStateDiagram}
+\caption{A basic state diagram for the overall architectural pattern}
+\end{figure}
 
 \subsection{Django Application Architecture Pattern}
-Django adopts a Models, Template, Views (MTV) framework which follows the MVC architecture closely. A “template” in MTV is the presentation layer or what we call “views” in MVC. A “view” in MTV is the business logic layer or what we call “controllers” in MVC. It is therefore easy to adopt an MVC pattern in the architecture of a Django webapp. However, as UX/UI is not a main focus for the software, the bulk of data flow and processing is done server-side. Queries are handled using REpresentational State Transfer (REST) - a request is taken in GET/POST and a response is returned in AJAX/JSON. Therefore, the web app component is most appropriate as an MVC “micro” pattern.
+Django adopts a Models, Template, Views (MTV) framework which follows the MVC architecture closely. A “template” in MTV is the presentation layer or what we call “views” in MVC. A “view” in MTV is the business logic layer or what we call “controllers” in MVC. It is therefore easy to adopt an MVC pattern in the architecture of a Django webapp. However, as UX/UI is not a main focus for the software, the bulk of data flow and processing is done server-side. Queries are handled using Representational State Transfer (REST) - a request is taken in GET/POST and a response is returned in AJAX/JSON. Therefore, the web app component is most appropriate as an MVC “micro” pattern.
 
-The architecture of the charbot consists of three main parts. Firstly, our Models will be able to manage data, process queries, fetch APIs and other related calculations. Views consist of the UX/UI paired with the CSS framework that will be described in detail in later parts of this document. Finally, Controllers are in charge of handling asynchronous queries and answers and managing user interaction between the chatbot. The advantages of the MVC architecture in the context of chatbots include being able to modularise components for future iterations, time efficiency since each team member can focus on one part of the architecture independently and separation of concerns. Although the level of complexity in our design blueprint may increase using this architecture, one major reason why Django provides the perfect solution for a chatbot is the availability of advanced libraries in Python that complements the architecture.
+The architecture of the chatbot consists of three main parts. Firstly, our Models will be able to manage data, process queries, fetch APIs and other related calculations. Views consist of the UX/UI paired with the CSS framework that will be described in detail in later parts of this document. Finally, Controllers are in charge of handling asynchronous queries and answers and managing user interaction between the chatbot. The advantages of the MVC architecture in the context of chatbots include being able to modularise components for future iterations, time efficiency since each team member can focus on one part of the architecture independently and separation of concerns. Although the level of complexity in our design blueprint may increase using this architecture, one major reason why Django provides the perfect solution for a chatbot is the availability of advanced libraries in Python that complements the architecture.
 
 \section{Implementation}
 The Python programming language will be used to integrate the web server and business logic for the back end system. Using Python grants access to any of the Python ecosystem’s extensive libraries and tools \cite{python1} for ease of implementation. The web server will be created using the Django web framework \cite{django}, which is appropriate for a project of this scale and scope as it allows for fast prototyping and straightforward deployment.
@@ -216,9 +219,14 @@ Interpreting queries and language processing can be split into two main processe
 
 \section{User Interface Design}
 
-The user interface will use the Bulma CSS framework \cite{bulma}, to maintain a professional and consistent interface. The main non-design component of the user interface is a text query and response panel. Other components of the system will be added both in-line to the responses, and as separate frames of the interface. We chose to present the queries and responses in this manner as the style is akin to other chat based applications.
+The user interface will use the Bulma CSS framework \cite{bulma}, to maintain a professional and consistent appearance. The main non-design component of the user interface is a text query and response panel. Other components of the system will be added both in-line to the responses, and as separate frames of the interface. We chose to present the queries and responses in this manner as the style is akin to other chat based applications. This can be seen in the mockup shown in \textit{Fig. 3}. 
 
 When designing the UI, many design principles will be considered, and each are outlined in \textbf{TABLE II}.
+\begin{figure}[h]
+	\includegraphics[scale=0.6]{ui}
+	\caption{Mockup of the query and response panel.}
+\end{figure}
+
 	\begin{table}[h]
 	\begin{tabular}{| m{2cm} | m{5.5cm} | }
 		\hline
@@ -270,7 +278,7 @@ When designing the UI, many design principles will be considered, and each are o
 	
 	\section{System Models}
 	
-	System models are an easy way of representing how different aspects of a software interact with one another. Each model is a representation of an abstract aspect of the system, with a different perspective. The models are constructed to assist with clearly defining the functionality of the software for both the customer and the development team. For this project a Class Diagram\textit{Fig. 2)}, a use case diagram \textit{(Fig. 3)}, and a sequence diagram \textit{(Fig. 4)}.
+	System models are an easy way of representing how different aspects of a software interact with one another. Each model is a representation of an abstract aspect of the system, with a different perspective. The models are constructed to assist with clearly defining the functionality of the software for both the customer and the development team. For this project a Class Diagram \textit{(Fig. 4)}, a use case diagram \textit{(Fig. 5)}, and a sequence diagram \textit{(Fig. 6)}.
 	
 	\begin{figure*}[h]
 		\includegraphics[width=\textwidth, height = 18cm]{classdiagram}
@@ -282,7 +290,7 @@ When designing the UI, many design principles will be considered, and each are o
 		\caption{Use case diagram showing how the user interacts with the software}
 	\end{figure*}
 	
-	These two models are focused on the coding and the user. The third system model is the sequence diagram, which is a detailed view of how each of the subsystems of the software interact with one another and when. The diagram traces the software from the moment a query is asked to the result being returned. This final diagram is located at the end of the document due to its size, labelled \textbf{fig. 3 and 4}.
+	These two models are focused on the coding and the user. The third system model is the sequence diagram, which is a detailed view of how each of the subsystems of the software interact with one another and when. The diagram traces the software from the moment a query is asked to the result being returned. This final diagram is located at the end of the document due to its size, labelled \textit{Fig. 5 and 6}.
 	
 	\begin{figure*}[h]
 		\includegraphics[width=\textwidth, height = 20cm]{sequence}
@@ -300,16 +308,16 @@ When designing the UI, many design principles will be considered, and each are o
 	
 \mbox{} \\
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ \\\\\\\\\\
+\\\\\\\\\\\\\\
 	
 	\section{Testing}
 	
-	At the end of each phased process, the implemented design shall be tested. When an agile approach is used programming and testing will be performed concurrently.
+	At the end of each phase the implemented design shall be tested. When an agile approach is used programming and testing will be performed concurrently.
 	
 	\subsection{Static Testing}
-	The team will use Lightweight code review, due to time constraints and due to the prototype nature of the web application being created. Code review will be done in various points of the development process. Instances of pair programming during the development process will also allow mistakes in code to be caught earlier.  All source code produce will be peer reviewed by at least one other member of the team, who did not work on that code. Peer review will also be done with at least one of the original authors, who will explain the function and logic of the code, while another team member discusses possible errors and problems. The use of GitHub to store code will also allow all members of the team to be aware of changes made and allow them to review updates. Besides manual approaches, team members will also compile all code written to confirm its syntactical validity.
+	The team will use lightweight code review, due to time constraints and the prototype nature of the web application being created. Code review will be done in various points of the development process. Instances of pair programming during the development process will also allow mistakes in code to be caught earlier.  All source code produced will be peer reviewed by at least one other member of the team, who did not work on that code. Peer review will also be done with at least one of the original authors, who will explain the function and logic of the code, while another team member discusses possible errors and problems. The use of GitHub to store code will also allow all members of the team to be aware of changes made and allow them to review updates. Besides manual approaches, team members will also compile all code written to confirm its syntactical validity.
 During code review, software verification shall be done through analysis. When a team member reviews code they will make logical evaluations to assure that the code is meeting the requirements set out in the requirement analysis report.
-Development will also be externally validated by communicating with all stakeholders when issues arise.
+Development will also be externally validated by communicating with the customer when issues arise.
 
 	\subsection{Dynamic Testing}
 	The results from inputs for the web application and input sections of the code will be tested against the expected outputs.
@@ -324,7 +332,7 @@ Development will also be externally validated by communicating with all stakehol
 	Once the subsystems are able to exchange data without errors, it is now necessary to test if the correct information is being passed between them. Testing will be done by validating data before it is passed to another component. Data moved to another component will be logged to make sure that previous unusual or incorrect data does not affect the processing of a new input or the performance of the system.
 	
 	\subsubsection{System Testing}
-	Once the whole system is integrated, it can be checked to see if it  the requirements set out in the requirements report. Specific test cases can be written down to check if the desired response is correct.
+	Once the whole system is integrated, it can be checked to see if it  the requirements set out in the Requirements Analysis. Specific test cases can be written down to check if the desired response is correct.
 	
 	\begin{table}[h]
 	\begin{tabular}{| m{3cm} | m{5cm} | }
@@ -396,11 +404,7 @@ Sanity checks at each stage of the system testing will allow the team to quickly
 The success of the project will be measured not only through the tests described previously that detail if the original specification has been met, but also whether it meets the defined expectations. This is a qualitative measure that will be determined through conversing with the customer as much as possible throughout development and through the feedback given following the presentation delivery. 
 
 \section{End of Life and Delivery}
-	Software development will end after the ninth week, where the software will be presented to the client using a live demo. The critical and any implemented optional features will be displayed, and there will be a chance to ask the group questions about the developed software. The software will be in a fully functional state, having met the specification set by the client. 
-	
-\section{Conclusion}
-	This software is explicitly designed to meet the design requirements. Throughout the document, many different aspects of the software's development were covered, starting from the risks taken and the earliest design to how the completed system will be tested. These points were elaborated and explained using a variety of UML diagrams presenting different views of the software. 
-
+	Software development will end after the ninth week, where the software will be presented to the client using a live demo. The critical and any implemented optional features will be displayed, and there will be a chance to ask the group questions about the developed software. The software will be in a fully functional state, having met the specification set by the client. Throughout the document, many different aspects of the software's development were covered, ranging from the risks taken, to the earliest design, to how the completed system will be tested. These points were elaborated and explained using a variety of UML diagrams presenting different views of the software. 
 	
 \bibliography{IEEEabrv,paddbib}
 \bibliographystyle{IEEEtran}

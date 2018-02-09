@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.29)  9 FEB 2018 12:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.29)  9 FEB 2018 13:33
 entering extended mode
 **./padd.tex
 (padd.tex
@@ -643,7 +643,7 @@ Missing character: There is no ô in font ptmr7t!
 File: BasicStateDiagram.png Graphic file (type png)
 
 <use BasicStateDiagram.png>
-Package pdftex.def Info: BasicStateDiagram.png used on input line 199.
+Package pdftex.def Info: BasicStateDiagram.png used on input line 200.
 (pdftex.def)             Requested size: 237.99893pt x 266.90569pt.
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
@@ -685,11 +685,17 @@ Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
+
+<ui.png, id=19, 387.54788pt x 116.23425pt>
+File: ui.png Graphic file (type png)
+ <use ui.png>
+Package pdftex.def Info: ui.png used on input line 226.
+(pdftex.def)             Requested size: 232.53052pt x 69.74107pt.
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
 
-Overfull \hbox (2.65378pt too wide) in paragraph at lines 233--233
+Overfull \hbox (2.65378pt too wide) in paragraph at lines 241--241
 []|\OT1/ptm/m/n/8 Comprehensibility| 
  []
 
@@ -702,309 +708,237 @@ Missing character: There is no ù in font ptmr7t!
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<classdiagram.png, id=19, 1503.36656pt x 1477.01813pt>
+<classdiagram.png, id=20, 1503.36656pt x 1477.01813pt>
 File: classdiagram.png Graphic file (type png)
  <use classdiagram.png>
-Package pdftex.def Info: classdiagram.png used on input line 276.
+Package pdftex.def Info: classdiagram.png used on input line 284.
 (pdftex.def)             Requested size: 516.00105pt x 512.14108pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<usecase.png, id=20, 886.31125pt x 557.08125pt>
+<usecase.png, id=21, 886.31125pt x 557.08125pt>
 File: usecase.png Graphic file (type png)
  <use usecase.png>
-Package pdftex.def Info: usecase.png used on input line 281.
+Package pdftex.def Info: usecase.png used on input line 289.
 (pdftex.def)             Requested size: 516.02187pt x 284.5327pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<sequence.png, id=21, 1327.96124pt x 1794.705pt>
+<sequence.png, id=22, 1327.96124pt x 1794.705pt>
 File: sequence.png Graphic file (type png)
  <use sequence.png>
-Package pdftex.def Info: sequence.png used on input line 288.
+Package pdftex.def Info: sequence.png used on input line 296.
 (pdftex.def)             Requested size: 515.99808pt x 569.03204pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<sequence_001.png, id=22, 1327.96124pt x 1599.9775pt>
+<sequence_001.png, id=23, 1327.96124pt x 1599.9775pt>
 File: sequence_001.png Graphic file (type png)
  <use sequence_001.png>
-Package pdftex.def Info: sequence_001.png used on input line 294.
+Package pdftex.def Info: sequence_001.png used on input line 302.
 (pdftex.def)             Requested size: 515.99808pt x 569.05798pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
+Underfull \hbox (badness 10000) in paragraph at lines 309--312
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-[4]
+[4 <./ui.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./classdiagram.png>] [6 <./usecase.png (PNG copy)>]
+ [5 <./classdiagram.png>]
+Underfull \vbox (badness 1048) has occurred while \output is active []
+
+ [6 <./usecase.png (PNG copy)>]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -1024,7 +958,7 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-Underfull \hbox (badness 2057) in paragraph at lines 345--345
+Underfull \hbox (badness 2057) in paragraph at lines 353--353
 []|\OT1/ptm/m/n/8 What is the per-cent-age
  []
 
@@ -1035,7 +969,7 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-Underfull \hbox (badness 2057) in paragraph at lines 349--349
+Underfull \hbox (badness 2057) in paragraph at lines 357--357
 []|\OT1/ptm/m/n/8 Has As-tra Zenica risen
  []
 
@@ -1052,12 +986,12 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-Underfull \hbox (badness 2818) in paragraph at lines 357--357
+Underfull \hbox (badness 2818) in paragraph at lines 365--365
 []|\OT1/ptm/m/n/8 How is Aerospace and
  []
 
 
-Underfull \hbox (badness 1558) in paragraph at lines 357--357
+Underfull \hbox (badness 1558) in paragraph at lines 365--365
 \OT1/ptm/m/n/8 De-fense per-form-ing this
  []
 
@@ -1095,27 +1029,27 @@ Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
 
-Overfull \hbox (0.82202pt too wide) in paragraph at lines 330--383
+Overfull \hbox (0.82202pt too wide) in paragraph at lines 338--391
 [][] 
  []
 
 (padd.bbl) [7] [8 <./sequence.png (PNG copy)>] [9 <./sequence_001.png (PNG copy
 )>] (padd.aux) ) 
 Here is how much of TeX's memory you used:
- 14834 strings out of 493323
- 313860 string characters out of 3139059
+ 14839 strings out of 493323
+ 313909 string characters out of 3139059
  382669 words of memory out of 3000000
- 18104 multiletter control sequences out of 15000+200000
+ 18108 multiletter control sequences out of 15000+200000
  36536 words of font info for 70 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 62i,12n,66p,1027b,886s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 62i,11n,66p,1027b,886s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on padd.pdf (9 pages, 725714 bytes).
+Output written on padd.pdf (9 pages, 816024 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
