@@ -1,0 +1,59 @@
+{% extends 'cs261/main.html' %}
+{% load staticfiles %}
+
+{% block head %}
+    <script src="{% static 'jquery-3.3.1.min.js' %}"></script>
+
+    <script>
+
+        // Not to be confused with AdBlock.
+        function addBlock(text) {
+            const $block = $('<div class="panel-block"></div>');
+            $block.append(text);
+            $('#form').before($block);
+        }
+
+        function doQuery() {
+            const $input = $('input[type="text"]');
+            const q = $input.val();
+            $input.val('');
+            addBlock(q);
+
+
+            $.get('/query', {q: q}, function(data, status, xhr) {
+                console.log(data);
+
+                addBlock($('<strong>' + data + '</strong>'));
+            });
+
+            $input.focus();
+        }
+
+        $(function() {
+            $('.button').click(doQuery);
+            $('input[type="text"]').keypress(function(e) {
+                if(e.key === 'Enter') doQuery(e);
+            });
+        });
+    </script>
+{% endblock %}
+
+{% block body %}
+<div class="panel">
+    <p class="panel-heading">Chat window</p>
+    <div class="panel-block">
+        <strong>Hello. How can I help you?</strong>
+    </div>
+    <div class="panel-block" id="form">
+        <div class="field has-addons">
+            <div class="control is-expanded">
+                <input class="input" autofocus type="text" placeholder="Query">
+            </div>
+            <div class="control">
+                <a class="button is-info is-outlined">Send</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
