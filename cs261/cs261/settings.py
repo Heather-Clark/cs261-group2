@@ -103,9 +103,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-gb'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/London'
 
 USE_I18N = True
 
@@ -113,8 +113,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.0/howto/static-files/
-
+# URL static files are served from
 STATIC_URL = '/static/'
+
+# Directories that static files are collected from
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static_resources'),
+)
+
+# Directory that static files are collected to
+STATIC_ROOT = os.path.join(BASE_DIR, 'STATIC')
+
+# Monday
+FIRST_DAY_OF_WEEK = 1
