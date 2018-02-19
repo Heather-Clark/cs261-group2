@@ -14,3 +14,7 @@
     - Organise further meeting for coding sessions/ report writing
 
 ### Minutes
+- Week 9 meeting trial run
+- video backup
+- H001
+- meeting this week
