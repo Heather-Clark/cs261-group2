@@ -7,9 +7,10 @@
     <script>
 
         // Not to be confused with AdBlock.
-        function addBlock(text) {
+        function addBlock(text, useText) {
+            useText = useText || false;
             const $block = $('<div class="panel-block"></div>');
-            $block.append(text);
+            useText ? $block.text(text) : $block.append(text);
             $('#form').before($block);
         }
 
@@ -17,7 +18,7 @@
             const $input = $('input[type="text"]');
             const q = $input.val();
             $input.val('');
-            addBlock(q);
+            addBlock(q, true);
 
 
             $.get('/query', {q: q}, function(data, status, xhr) {
