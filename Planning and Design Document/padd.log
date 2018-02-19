@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.29)  9 FEB 2018 13:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.29)  9 FEB 2018 13:55
 entering extended mode
 **./padd.tex
 (padd.tex
@@ -712,7 +712,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: classdiagram.png Graphic file (type png)
  <use classdiagram.png>
 Package pdftex.def Info: classdiagram.png used on input line 284.
-(pdftex.def)             Requested size: 516.00105pt x 512.14108pt.
+(pdftex.def)             Requested size: 542.70262pt x 533.19106pt.
+
+Overfull \hbox (26.70262pt too wide) in paragraph at lines 284--285
+[][] 
+ []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -935,10 +939,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./classdiagram.png>]
-Underfull \vbox (badness 1048) has occurred while \output is active []
-
- [6 <./usecase.png (PNG copy)>]
+ [5 <./classdiagram.png>] [6 <./usecase.png (PNG copy)>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no œ in font ptmr7t!
@@ -1047,7 +1048,7 @@ Here is how much of TeX's memory you used:
 ogram Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTe
 X 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /urw/times/utmri8a.pfb>
-Output written on padd.pdf (9 pages, 816024 bytes).
+Output written on padd.pdf (9 pages, 816016 bytes).
 PDF statistics:
  57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
