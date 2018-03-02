@@ -9,10 +9,13 @@ import pandas_datareader.data as web
 import pickle
 import requests
 import os
+import json
 
-# Candlestick graphs
+# Graphs + Data
 from matplotlib.finance import candlestick_ohlc
 import matplotlib.dates as mdates
+import urllib2 # use urllib.request for python 3
+import decimal
 
 #style for matpltolib
 style.use('ggplot')
@@ -50,7 +53,7 @@ def get_data_from_yahoo(reload_ftse100 = False): # change this to True if u want
 
 	# specify dates
 	start = dt.datetime(2000, 1, 1)
-	end = dt.datetime(2018, 1, 1)
+	end = dt.datetime.now()
 
 	# check whether ticker exists before fetcing them
 	for ticker in tickers:
@@ -62,14 +65,12 @@ def get_data_from_yahoo(reload_ftse100 = False): # change this to True if u want
 		else:
 			print('Already have {}'.format(ticker))
 
-#get_data_from_yahoo()
-
 
 # EXAMPLE: BARCLAYS/BARC
 # Yahoo uses Barc.L as a ticker
 # extract
 start = dt.datetime(2000,1,1)
-end = dt.datetime(2018,1,1)
+end = dt.datetime.now()
 df = web.DataReader('BARC.L', 'yahoo', start, end)
 df.to_csv('barc.csv')
 
@@ -91,6 +92,108 @@ ax1.xaxis_date()
 # output
 candlestick_ohlc(ax1, df_ohlc.values, width=2, colorup='g')
 ax2.fill_between(df_volume.index.map(mdates.date2num), df_volume.values, 0)
-plt.show()
+#plt.show()
 
 
+################################################## Basic Statistics
+# TODO: The last row of the CSV is fucked up
+def get_current_spot_price(ticker):
+	df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+	price = df.iloc[-2,4] # -2 = 2nd last row, 5 = column index
+	return price
+
+print("Current Spot Price of BARC is ", get_current_spot_price("BARC"))
+
+def get_current_trading_volume(ticker):
+	df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+	volume = df.iloc[-2,6]
+	return volume
+
+print("Current Trading Volume for BARC is", get_current_trading_volume("BARC"))
+
+def get_percentage_change_daily(ticker):
+	df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+	yesterday_close = df.iloc[-3,5]
+	today_close = df.iloc[-2,5]
+	return (today_close - yesterday_close) * 100 / today_close
+
+print("Percentage Change daily is %", get_percentage_change_daily("BARC"))
+
+def get_specific_spot_price(ticker, date):
+	df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+	row = df[df['Date'] == date]
+	price = row.iloc[0,4]
+	return price
+
+print("Specific spot price is", get_specific_spot_price("BARC", '2000-02-01'))
+
+def get_specific_trading_volume(ticker, date):
+	df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+	row = df[df['Date'] == date]
+	volume = row.iloc[0,6]
+	return volume
+
+print("Specific trading volume is", get_specific_trading_volume("BARC", '2000-02-01'))
+
+def get_profit_period(ticker):
+	response = urllib2.urlopen("https://query2.finance.yahoo.com/v10/finance/quoteSummary/"+ticker+".L?modules=financialData")
+	data = json.load(response)
+	profitMargins = json.dumps(data['quoteSummary']['result'][0]['financialData']['profitMargins']['raw'])
+	revenue = json.dumps(data['quoteSummary']['result'][0]['financialData']['totalRevenue']['raw'])
+	profit = float(profitMargins) - float(revenue)
+	return profit
+
+print("profit this year is",get_profit_period("BARC"))
+
+def get_eps_year(ticker):
+	response = urllib2.urlopen("https://query2.finance.yahoo.com/v10/finance/quoteSummary/"+ticker+".L?modules=defaultKeyStatistics")
+	data = json.load(response)
+	trailingEps = json.dumps(data['quoteSummary']['result'][0]['defaultKeyStatistics']['trailingEps']['raw'])
+	forwardEps = json.dumps(data['quoteSummary']['result'][0]['defaultKeyStatistics']['forwardEps']['raw'])
+	return (trailingEps, forwardEps)
+
+print("trailing EPS and forward EPS is", get_eps_year("BARC"))
+
+# OK this is probably wrong.... idk how to calculate div per share
+def get_dividend_per_share(ticker):
+	response = urllib2.urlopen("https://query2.finance.yahoo.com/v10/finance/quoteSummary/"+ticker+".L?modules=cashflowStatementHistory,defaultKeyStatistics")
+	data = json.load(response)
+	dividends = json.dumps(data['quoteSummary']['result'][0]['cashflowStatementHistory']['cashflowStatements'][0]['dividendsPaid']['raw'])
+	outstandingShares = json.dumps(data['quoteSummary']['result'][0]['defaultKeyStatistics']['sharesOutstanding']['raw'])
+	dps = -float(dividends) / float(outstandingShares)
+	return dps
+
+print("dividend per share for last year is", get_dividend_per_share("BARC"))
+
+################################################## Group Statistics
+
+#TODO: web scrapping HashMap - <ticker, industry>
+#def get_industry_trend(industry):
+
+#def get_industry_trend_performance(industry, period):
+
+#def get_companies_industry_trend(industry, trend=True): # True - Rising, False - Falling
+
+# Helper Function
+def get_companies(industry):
+	resp = requests.get('https://en.wikipedia.org/wiki/FTSE_100_Index')
+	soup = bs.BeautifulSoup(resp.text, "lxml")
+	table = soup.find('table', {'class': 'wikitable sortable'})
+	tickers = []
+	for row in table.findAll('tr')[1:]:
+		sector = row.findAll('td')[2]
+		#print(sector)
+
+
+		ticker = row.findAll('td')[1].text
+		if ticker.endswith('.'):
+			ticker = ticker[:-1]
+		ticker = ticker.replace('.','-')
+		tickers.append(ticker)
+
+	with open("sp500tickers.pickle", "wb") as f:
+		pickle.dump(tickers, f)
+
+	#print(tickers)
+
+#get_companies("Banks")
