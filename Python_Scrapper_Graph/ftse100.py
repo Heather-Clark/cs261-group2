@@ -37,7 +37,6 @@ def save_ftse100_tickers():
 		pickle.dump(tickers, f)
 
 	print(tickers)
-
 	return tickers
 
 # Fetches data from yahoo based on tickers in directory
@@ -135,12 +134,6 @@ def get_dividend_per_share(ticker):
 print("Dividend per share in 2017 is", get_dividend_per_share("BARC"))
 
 ################################################## Group Statistics
-def get_industry_trend(industry):
-
-#def get_industry_trend_performance(industry, period):
-
-#def get_companies_industry_trend(industry, trend=True): # True - Rising, False - Falling
-
 # Helper Function
 def get_tickers(industry):
 	resp = requests.get('https://en.wikipedia.org/wiki/FTSE_100_Index')
@@ -159,4 +152,164 @@ def get_tickers(industry):
 		pickle.dump(tickers, f)
 	return tickers
 
-print("Companies in 'Banks' industry are:", get_tickers("Banks"))
+def get_industry_trend(industry):
+	tickers = get_tickers(industry)
+	industry = 0;
+	for ticker in tickers:
+		df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+		dayOne = df.iloc[-5,4]
+		dayFive = df.iloc[-1,4]
+		percentageChange = (dayFive - dayOne) / dayOne * 100
+		industry = industry + percentageChange
+
+	industry = industry / len(tickers)
+
+	return industry
+
+print("Trend (5 days) for companies in 'Industrial Metals & Mining' industry is ", get_industry_trend("Industrial Metals & Mining"))
+
+def get_industry_trend_today(industry):
+	tickers = get_tickers(industry)
+	industry = 0;
+	for ticker in tickers:
+		df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+		dayOne = df.iloc[-2,4]
+		dayFive = df.iloc[-1,4]
+		percentageChange = (dayFive - dayOne) / dayOne * 100
+		industry = industry + percentageChange
+
+	industry = industry / len(tickers)
+
+	return industry
+
+print("Trend (today) for companies in 'Industrial Metals & Mining' industry is ", get_industry_trend_today("Industrial Metals & Mining"))
+
+def get_companies_industry_trend(industry, trend): # True - Rising, False - Falling
+	tickers = get_tickers(industry)
+	data = []
+	for ticker in tickers:
+		df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+		dayOne = df.iloc[-5,4]
+		dayFive = df.iloc[-1,4]
+		percentageChange = (dayFive - dayOne) / dayOne * 100
+
+		if(trend):
+			if(percentageChange > 0):
+				data.append(ticker)
+		else:
+			if(percentageChange < 0):
+				data.append(ticker)
+	return data
+
+print("Company tickers that are rising (5 day trend) are:", get_companies_industry_trend("Banks", False))
+
+################################################## News related stuff.
+def get_news_industry(industry):
+	tickers = get_tickers(industry)
+	signal = False
+
+	# beautiful soup
+	sauce = urllib2.urlopen("http://feeds.reuters.com/reuters/UKBankingFinancial").read() # yahoo rss finance not availabe. use reuters instead
+	soup = bs.BeautifulSoup(sauce, 'xml')
+
+	sentence = ""
+
+	# web scrapping
+	for url in soup.find_all('item'):
+		title = url.title.text
+		desc = url.description.text
+
+		sentence = title + desc
+
+		for ticker in tickers:
+			if ticker in sentence:
+				signal = True
+
+	return(signal)
+
+print("Is this industry in the news?", get_news_industry("Banks"))
+
+def get_sentiment_analysis(industry):
+	get_tickers(industry)
+	# TODO: news_scrapper.py here
+
+################################################## Comparative queries.
+def get_compare_tickers_weekly(tickers, Trend = True):
+	
+	currentTicker = 0;
+	currentPercentage = -100;
+
+	#tickers is an array of ticker #Trend
+	for ticker in tickers:
+		df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+		dayOne = df.iloc[-5,4]
+		dayFive = df.iloc[-1,4]
+		percentageChange = (dayFive - dayOne) / dayOne * 100
+		# print(ticker, percentageChange)
+		if(percentageChange > currentPercentage):
+			currentTicker = ticker
+
+	return currentTicker
+
+print("Best Ticker weekly is:", get_compare_tickers_weekly(["BARC","HSBA"]))
+
+def get_compare_tickers_daily(tickers, Trend = True):
+	
+	currentTicker = 0;
+	currentPercentage = -100;
+
+	#tickers is an array of ticker #Trend
+	for ticker in tickers:
+		df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+		dayOne = df.iloc[-2,4]
+		dayFive = df.iloc[-1,4]
+		percentageChange = (dayFive - dayOne) / dayOne * 100
+		# print(ticker, percentageChange)
+		if(percentageChange > currentPercentage):
+			currentTicker = ticker
+
+	return currentTicker
+
+print("Best Ticker daily is:",get_compare_tickers_daily(["BARC","HSBA"]))
+
+def get_compare_tickers_monthly(tickers, Trend = True):
+	
+	currentTicker = 0;
+	currentPercentage = -100;
+
+	#tickers is an array of ticker #Trend
+	for ticker in tickers:
+		df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+		dayOne = df.iloc[-30,4]
+		dayFive = df.iloc[-1,4]
+		percentageChange = (dayFive - dayOne) / dayOne * 100
+		# print(ticker, percentageChange)
+		if(percentageChange > currentPercentage):
+			currentTicker = ticker
+
+	return currentTicker
+
+print("Best Ticker monthly is:",get_compare_tickers_monthly(["BARC","HSBA"]))
+
+################################################## Subjective queries
+# def get_tickers_to_invest(): IDK, this is hard
+
+def get_best_ticker_in_industry(industry):
+	tickers = get_tickers(industry)
+
+	currentTicker = 0;
+	currentPercentage = -100;
+
+	#tickers is an array of ticker #Trend
+	for ticker in tickers:
+		df = pd.read_csv("ftse100tickers/"+ticker+".csv")
+		dayOne = df.iloc[-365,4]
+		dayFive = df.iloc[-1,4]
+		percentageChange = (dayFive - dayOne) / dayOne * 100
+		# print(ticker, percentageChange)
+		if(percentageChange > currentPercentage):
+			currentTicker = ticker
+
+	return currentTicker
+
+print("Best ticker in this industry over 365 days is", get_best_ticker_in_industry("Banks"))
