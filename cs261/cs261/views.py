@@ -15,6 +15,7 @@ import cs261.utility as util
 # i.e. this is where we interface with the app logic.
 def query(request):
     q_text = request.GET.get('q', 'No query')
+
     params = {
         'query': q_text,
         'sessionId': '1',
@@ -27,19 +28,11 @@ def query(request):
     }
 
     r = requests.get('https://api.dialogflow.com/v1/query', params=params, headers=headers)
-    # print(r.text)
+
     try:
-        ####################### ADDED STUFF HERE
-        # parse data to json
         resp = r.json()
-
-        # process queries using manual functions here
         text = process(resp)
-        print(text)
-        ####################
-        #text = json.loads(r.text)['result']['fulfillment']['speech']
     except KeyError:
-
         text = 'Something went wrong. Please try again.'
 
     # store history and file log
@@ -49,10 +42,7 @@ def query(request):
     intent = None
     try:
         intent = r.json()['result']['metadata']['intentName']
-        print('intent:', intent)
-
         entities = r.json()['result']['parameters']
-        print('entities:', entities)
         for i in entities:
             if (type(entities[i]) != list):
                 continue
@@ -63,20 +53,13 @@ def query(request):
                 entity, created = models.Entity.objects.get_or_create(entity_type=i, name=j)
                 q.entities.add(entity)
             q.save()
-
     except:
         print('error')
 
-    print(text)
     # make response
-
     context = {
         'message': text
     }
-
-    if intent == 'NewsIntent':
-        # TODO: Integrate with scraper
-        context['news'] = ['News 1', 'News 2']
 
     return render(request, 'cs261/response.html', context=context)
 
@@ -212,9 +195,17 @@ def process(resp):
     elif intent == 'NewsIntent':
         ticker = resp['result']['parameters']['FTSE100']
         ticker = ticker[:-2]
-        news = str(util.get_news_stock(ticker))
-        text = resp['result']['fulfillment']['speech']
-        text = text + news
+        articles = []
+        news = util.get_news_stock(ticker)
+        for i in range(0,len(news)):
+            # TODO: find a way to show this
+            news[i].desc 
+            news[i].link
+            news[i].pubDate
+            news[i].title
+            articles.append(news[i].title)
+
+        text = articles
 
     elif intent == 'SpotPriceDate':
         ticker = resp['result']['parameters']['FTSE100']
@@ -371,6 +362,5 @@ def process(resp):
         
     else: 
         text = resp['result']['fulfillment']['speech']
-        pass
 
     return text

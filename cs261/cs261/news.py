@@ -13,6 +13,13 @@ import json
 #ticker = raw_input("Enter Stock Ticker Symbol (i.e. AAPL, FB, TSLA):\n")
 #ticker = "FB"
 
+class Article:
+    def __init__(self, title, desc, link, pubDate):
+        self.title = title
+        self.desc = desc
+        self.link = link
+        self.pubDate = pubDate
+
 # beautiful soup
 def get_news(ticker):
 	with urllib.request.urlopen("https://feeds.finance.yahoo.com/rss/2.0/headline?s="+ticker+".L") as url:
@@ -20,7 +27,6 @@ def get_news(ticker):
 	soup = bs.BeautifulSoup(sauce, 'xml')
 
 	data = []
-	sentences = []
 
 	# web scrapping
 	for url in soup.find_all('item'):
@@ -28,20 +34,14 @@ def get_news(ticker):
 		desc = url.description.text
 		link = url.link.text
 		pubDate = url.pubDate.text
-		article = {
-					"title": title,
-					"desc": desc,
-					"link": link,
-					"pubDate": pubDate
-				  }
-		data.append(article)
-		sentences.append(title + ". " + desc)
-	
+
+		#article = {'title': title, 'desc': desc, 'link': link, 'pubDate': pubDate }
+		data.append(Article(title, desc, link, pubDate))
+		#sentences.append(title + ". " + desc)
+
 	# dump data into json file
-	# data = json.dumps(data)
-	data = json.dumps(data, sort_keys=True, indent=4, separators=(',', ': '))
-	print(data[0])
 	return data
+
 
 # Sentiment Intensity Analysis for each individual news article title + brief description
 # can be improved if entire article is used instead?
