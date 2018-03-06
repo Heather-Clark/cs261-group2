@@ -17,18 +17,24 @@
 
         function doQuery() {
             const $input = $('input[type="text"]');
-            const q = $input.val();
+            const q = $input.val().trim();
+            if (q == '') return;
             $input.val('');
             addBlock(q, true);
+
+            $input.parent().addClass('is-loading');
+            $('.button').attr('disabled', '')
 
 
             $.get('/query', {q: q}, function(data, status, xhr) {
                 console.log(data);
-
+                $input.parent().removeClass('is-loading');
+                $('.button').attr('disabled', false);
                 addBlock($('<strong>' + data + '</strong>'));
+                $input.focus();
             });
 
-            $input.focus();
+            //$input.focus();
         }
 
         $(function() {
@@ -49,10 +55,10 @@
     <div class="panel-block" id="form">
         <div class="field has-addons">
             <div class="control is-expanded">
-                <input class="input" autofocus type="text" placeholder="Query">
+                <input class="input" autofocus maxlength=254 type="text" placeholder="Query">
             </div>
             <div class="control">
-                <a class="button is-info is-outlined">Send</a>
+                <a class="button is-info">Send</a>
             </div>
         </div>
     </div>

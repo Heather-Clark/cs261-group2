@@ -2,16 +2,19 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.html import escape
 
+from history import models
+
 import requests
 import json
 import os
+import datetime
 
 # Where the magic happens.
 # i.e. this is where we interface with the app logic.
 def query(request):
-
+    q_text = request.GET.get('q', 'No query')
     params = {
-        'query': request.GET.get('q', 'No query'),
+        'query': q_text,
         'sessionId': '1',
         'v': '20150910',
         'lang': 'en'
@@ -22,16 +25,47 @@ def query(request):
     }
 
     r = requests.get('https://api.dialogflow.com/v1/query', params=params, headers=headers)
+    # print(r.text)
+    try:
+        text = json.loads(r.text)['result']['fulfillment']['speech']
+    except KeyError:
 
-    text = json.loads(r.text)['result']['fulfillment']['speech']
+        text = 'Something went wrong. Please try again.'
+
+    # store history and file log
+    with open('logs/' + datetime.datetime.now().strftime('%Y-%m-%d-T%H-%M-%S.json'), 'w+') as f:
+        f.write(json.dumps(r.json(), indent=2))
+
+    intent = None
+    try:
+        intent = r.json()['result']['metadata']['intentName']
+        print('intent:', intent)
+
+        entities = r.json()['result']['parameters']
+        print('entities:', entities)
+        for i in entities:
+            if (type(entities[i]) != list):
+                continue
+
+            q = models.Query(text=q_text, intent=intent)
+            q.save()
+            for j in entities[i]:
+                entity, created = models.Entity.objects.get_or_create(entity_type=i, name=j)
+                q.entities.add(entity)
+            q.save()
+
+    except:
+        print('error')
+
+    print(text)
+    # make response
 
     context = {
         'message': text
     }
 
-    import datetime
-    with open('logs/' + datetime.datetime.now().strftime('%Y-%m-%d-T%H-%M-%S.json'), 'w+') as f:
-        f.write(r.text)
-
+    if intent == 'NewsIntent':
+        # TODO: Integrate with scraper
+        context['news'] = ['News 1', 'News 2']
 
     return render(request, 'cs261/response.html', context=context)
