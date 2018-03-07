@@ -21,8 +21,24 @@
                 + date.getMinutes() + ":" 
                 + date.getSeconds()+")";
 
+                // message
+            var str = '<article class="media"> \
+                      <figure class="media-left"> \
+                        <p class="image is-64x64"> \
+                          <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t34.0-0/s261x260/26696332_1447105042067694_1189062532_n.png?oh=0d44f2ab442e2325d7dbbb820d0acc85&oe=5AA18D95"> \
+                        </p> \
+                      </figure>\
+                      <div class="media-content">\
+                        <div class="content">\
+                          <p>\
+                            <strong>You</strong> <small>@CS261</small> <small>'+date+'</small>\
+                            <br>'+text+'\
+                          </p>\
+                        </div>\
+                      </div>\
+                    </article>';
 
-            useText ? $block.text(time + " You: " + text) : $block.append(text);
+            useText ? $block.append(str) : $block.append(text);
             $('#form').before($block);
 
             // auto scroll
@@ -54,8 +70,27 @@
                     + date.getHours() + ":"  
                     + date.getMinutes() + ":" 
                     + date.getSeconds()+")";
+                // message
+               var str = '<article class="media"> \
+                          <figure class="media-left"> \
+                            <p class="image is-64x64"> \
+                              <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t34.0-0/p173x172/28741390_10214323860584612_1902458621_n.png?oh=4af815eafc9ed1a5b441ab77e8f79a02&oe=5AA19530"> \
+                            </p> \
+                          </figure>\
+                          <div class="media-content">\
+                            <div class="content">\
+                              <p>\
+                                <strong>Buzz</strong> <small>@beehive</small> <small>'+date+'</small>\
+                                <br>'+data+'\
+                              </p>\
+                            </div>\
+                          </div>\
+                        </article>';
 
-                addBlock($('<strong>' + time + " Buzz:"+ data + '</strong>'));
+                addBlock($(
+                    //'<strong>' + time + " Buzz:"+ data + '</strong>'
+                    str
+                ));
                 $input.focus();
             });
 
@@ -74,18 +109,31 @@
 
 {% block body %}
 
-<div class="box" id="box" style="height: 80vh; overflow-y: scroll;">
-    <div class="panel" id="form" style="position: relative; bottom: 0;">
+    <section class="hero is-warning">
+        <div class="hero-body" style="height: 50px;">
+            <div class="container" style="position: absolute; top:10px;">
+                <h1 class="title">
+                    Buzz
+                </h1>
+            <h2 class="subtitle">
+                (Because its full of buzzwords: NLP, Artificial Intelligence, Chatbot)
+            </h2>
+            </div>
+        </div>
+    </section>
 
+    <div class="box" id="box" style="height: 70vh; overflow-y: scroll;">
+        <div class="panel" id="form" style="position: relative; bottom: 0;">
+        </div>
     </div>
-</div>
 
-<div class="field has-addons">
-    <div class="control is-expanded">
-        <input class="input" autofocus maxlength=254 type="text" placeholder="Query">
+    <div class="field has-addons">
+        <div class="control is-expanded">
+            <input class="input" autofocus maxlength=254 type="text" placeholder="Query">
+        </div>
+        <div class="control">
+            <a class="button is-info">Send</a>
+        </div>
     </div>
-    <div class="control">
-        <a class="button is-info">Send</a>
-    </div>
-</div>
+
 {% endblock %}
