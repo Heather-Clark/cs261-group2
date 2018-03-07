@@ -48,10 +48,12 @@ def get_sentiment_analysis(ticker):
 
 	# Sentiment Intensity Analysis for each individual news article title + brief description
 	# can be improved if entire article is used instead?
+	sentiment = []
 	sid = SentimentIntensityAnalyzer()
 	for i in range(0,len(articles)):
-		print(articles[i].desc)
-		#ss = sid.polarity_scores(sentence)
+		ss = sid.polarity_scores(articles[i].title +","+ articles[i].desc)
+		sentiment.append(ss)
 		#for k in sorted(ss):
 		#	print('{0}: {1}, '.format(k, ss[k]))
 		#print()
+	return sentiment

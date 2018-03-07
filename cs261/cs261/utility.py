@@ -200,11 +200,11 @@ def get_news_industry(industry):
     return(signal)
 
 def get_news_stock(ticker):
-    return news.get_sentiment_analysis(ticker)
+    return news.get_news(ticker)
 
 def get_sentiment_analysis(ticker):
-    get_sentiment_analysis
-    # TODO: news_scrapper.py here
+    return news.get_sentiment_analysis(ticker)
+    
 
 ################################################## Comparative queries.
 def get_compare_tickers_weekly(tickers, Trend = True):

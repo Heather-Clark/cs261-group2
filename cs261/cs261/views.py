@@ -306,11 +306,14 @@ def process(resp):
             text = "No. But Food and Drugs Retailer is in the news (When i was being tested). Try asking me this again"
 
     elif intent == 'StockNews':
-        pass
+        ticker = resp['result']['parameters']['FTSE100']
+        ticker = ticker[:-2]
+        text = util.get_sentiment_analysis(ticker)
 
 
     elif intent == 'SentimentAnalysisStock':
         ticker = resp['result']['parameters']['FTSE100']
+        ticker = ticker[:-2]
         text = util.get_sentiment_analysis(ticker)
 
     # DONE
