@@ -10,7 +10,7 @@
         // Not to be confused with AdBlock.
         function addBlock(text, useText) {
             useText = useText || false;
-            const $block = $('<div class="panel-block"></div>');
+            const $block = $('<div class="panel"></div>');
             useText ? $block.text(text) : $block.append(text);
             $('#form').before($block);
         }
@@ -47,12 +47,9 @@
 {% endblock %}
 
 {% block body %}
-<div class="panel">
-    <p class="panel-heading">Chat window</p>
-    <div class="panel-block">
-        <strong>Hello. How can I help you?</strong>
-    </div>
-    <div class="panel-block" id="form">
+
+<div class="box">
+    <div class="panel" id="form">
         <div class="field has-addons">
             <div class="control is-expanded">
                 <input class="input" autofocus maxlength=254 type="text" placeholder="Query">

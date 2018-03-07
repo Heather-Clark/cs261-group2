@@ -305,12 +305,13 @@ def process(resp):
         else:
             text = "No. But Food and Drugs Retailer is in the news (When i was being tested). Try asking me this again"
 
+    # TODO: WTF is this again? I forgot
     elif intent == 'StockNews':
         ticker = resp['result']['parameters']['FTSE100']
         ticker = ticker[:-2]
         text = util.get_sentiment_analysis(ticker)
 
-
+    # DONE
     elif intent == 'SentimentAnalysisStock':
         ticker = resp['result']['parameters']['FTSE100']
         ticker = ticker[:-2]
@@ -402,5 +403,7 @@ def process(resp):
         text = resp['result']['fulfillment']['speech']
 
     # IF text is empty, throw exception
+    if text == "":
+        text = "I didn't get that. Please try again."
 
     return text
