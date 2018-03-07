@@ -9,7 +9,12 @@
         <title>{% block title %}{% endblock %}</title>
 
         <link rel="stylesheet" href="{% static 'bulma.css' %}">
-
+        <style>
+        li {
+            list-style-type: square;
+            list-style-position: inside;
+        }
+        </style>
         {% block head %}{% endblock %}
 
     </head>

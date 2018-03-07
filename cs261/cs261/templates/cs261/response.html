@@ -5,7 +5,7 @@
 {% if news %}
 <ul>
 	{% for new in news %}
-	<li>{{new}}</li>
+	<li><a href="{{new.link}}">{{new.title}}</a></li>
 	{% endfor %}
 </ul>
 {% endif %}
