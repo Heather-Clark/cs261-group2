@@ -10,7 +10,6 @@ import os
 import datetime
 import cs261.utility as util
 
-
 # Where the magic happens.
 # i.e. this is where we interface with the app logic.
 def query(request):
@@ -28,24 +27,27 @@ def query(request):
     }
 
     r = requests.get('https://api.dialogflow.com/v1/query', params=params, headers=headers)
-
+    resp = None
     try:
         resp = r.json()
         text = process(resp)
-    except KeyError:
+    except:
         text = 'Something went wrong. Please try again.'
 
-    # store history and file log
-    #with open('logs/' + datetime.datetime.now().strftime('%Y-%m-%d-T%H-%M-%S.json'), 'w+') as f:
-    #    f.write(json.dumps(r.json(), indent=2))
-
+    # store history
     intent = None
     try:
         intent = r.json()['result']['metadata']['intentName']
         entities = r.json()['result']['parameters']
+        print('ENTITIES:')
+        print(entities)
         for i in entities:
-            if (type(entities[i]) != list):
-                continue
+
+            ents = entities[i]
+            if (type(ents) != list):
+                ents = [ents]
+
+            print(i, ents)
 
             q = models.Query(text=q_text, intent=intent)
             q.save()
@@ -53,16 +55,56 @@ def query(request):
                 entity, created = models.Entity.objects.get_or_create(entity_type=i, name=j)
                 q.entities.add(entity)
             q.save()
+
+            print('saved query: ', q)
+        print('end of for loop')
     except:
-        print('error')
+        print('error saving query')
 
     # make response
     context = {
         'message': text
     }
 
+    if intent == 'NewsIntent':
+        context['news'] = newsContext(resp)
+
     return render(request, 'cs261/response.html', context=context)
 
+# Input: DialogFlow response (expected to be a NewsIntent)
+# Output: a list of dictionaries representing news articles
+#   to go into the template context.
+def newsContext(resp):
+    # List of dictionaries representing news articles
+    articles = []
+    ticker = resp['result']['parameters']['FTSE100']
+
+    # Cut off the ".L" presumably
+    ticker = ticker[:-2]
+    news = util.get_news_stock(ticker)
+
+    sentiments = util.get_sentiment_analysis(ticker)
+    for i in range(0,len(news)):
+
+        sentiment = sentiments[i]['compound']
+        sentiment_name = 'neutral'
+        THRESHOLD = 0.1
+        if sentiment > THRESHOLD:
+            sentiment_name = 'positive'
+        if sentiment < -THRESHOLD:
+            sentiment_name = 'negative'
+
+        articles.append({
+            'title': news[i].title,
+            'description': news[i].desc,
+            'link': news[i].link,
+            'publicationdate': news[i].pubDate,
+
+            'sentiment': sentiment,
+            'sentiment_name': sentiment_name
+            })
+
+    return articles
 
 # 1) Identify intent and parameters
 # 2) Process query
@@ -76,7 +118,7 @@ def process(resp):
     # use util functions to process data based on the intent
     # use pass to use default output from dialogflow
     # Switch equivalent for intents
-    
+
     # DONE
     if intent == 'SpotPrice':
         ticker = resp['result']['parameters']['FTSE100'][0]
@@ -217,18 +259,22 @@ def process(resp):
     # TODO: Think of what to do with news object
     elif intent == 'NewsIntent':
         ticker = resp['result']['parameters']['FTSE100']
-        ticker = ticker[:-2]
+        """ticker = ticker[:-2]
         articles = []
         news = util.get_news_stock(ticker)
         for i in range(0,len(news)):
             # TODO: find a way to show this
-            news[i].desc 
+            news[i].desc
             news[i].link
             news[i].pubDate
             news[i].title
             articles.append(news[i].title)
 
-        text = articles
+        text = articles"""
+
+        text = "Here's the news for {}:".format(ticker)
+        if ticker == '':
+            text = "I don't understand."
 
     # DONE
     elif intent == 'SpotPriceDate':
@@ -267,14 +313,14 @@ def process(resp):
         text = str(round(util.get_dividend(ticker), 2))
         text = "The latest stock dividends of " + ticker + " is " + text
 
-# TODO: use web scrapper to get percentage of industry
+    # TODO: use web scrapper to get percentage of industry
     #DONE
     elif intent == 'IndustryIsRising':
         industry = resp['result']['parameters']['Sectors']
         trend = util.get_industry_trend_weekly(industry)
         if trend >= 0:
             text = "Yes, the industry " + industry + " is rising"
-        else: 
+        else:
             text = "No, the industry " + industry + " is falling"
 
     # DONE
@@ -334,7 +380,7 @@ def process(resp):
         if(util.get_compare_tickers_weekly(tickers) == first):
             text = "Yes, it is doing better."
         else:
-            text = "No, it is doing worse." 
+            text = "No, it is doing worse."
 
     # DONE
     elif intent == 'CompareStockWeekly':
@@ -397,9 +443,9 @@ def process(resp):
     # DONE
     elif intent == 'ShouldInvest':
         text = "No you shouldn't. You should consult a professional instead of a Chatbot, but you can ask me which ticker is the best performing in any industry or get news sentiment!"
-    
+
     # DEFAULT FOR SMALL TALK
-    else: 
+    else:
         text = resp['result']['fulfillment']['speech']
 
     # IF text is empty, throw exception
@@ -407,3 +453,19 @@ def process(resp):
         text = "I didn't get that. Please try again."
 
     return text
+
+
+def index(request):
+
+    context = {}
+    # get all queries in the last 24 hours
+    last24hrs = datetime.timedelta(-1) + datetime.datetime.now()
+    queries = models.Query.objects.filter(created_at__gte=last24hrs)
+    """queries = list(queries)
+    context['queries'] = queries"""
+
+    print(queries)
+
+
+
+    return render(request, 'cs261/index.html', context)
