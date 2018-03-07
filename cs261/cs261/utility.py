@@ -107,7 +107,7 @@ def get_tickers(industry):
             ticker = ticker.replace('.','-')
             tickers.append(ticker)
 
-    with open("sp500tickers.pickle", "wb") as f:
+    with open("ftse100tickers.pickle", "wb") as f:
         pickle.dump(tickers, f)
     return tickers
 
@@ -159,12 +159,28 @@ def get_tickers_industry_trend(industry, trend):
 
 ################################################## News related stuff.
 def get_news_industry(industry):
+    # Find the name of the companies in the industry via tickers + scrapper
     tickers = get_tickers(industry)
+    companies = []
+    for ticker in tickers:
+        resp = requests.get('https://en.wikipedia.org/wiki/FTSE_100_Index')
+        soup = bs.BeautifulSoup(resp.text, "lxml")
+        table = soup.find('table', {'class': 'wikitable sortable'})
+        
+        for row in table.findAll('tr')[1:]:
+            if(row('td')[1].text == ticker):
+                company = row('td')[0].text
+                companies.append(company)
+
+        with open("ftse100tickers.pickle", "wb") as f:
+            pickle.dump(tickers, f)
+
+    # Not present in news
     signal = False
 
     # beautiful soup
     # sauce = urllib2.urlopen("http://feeds.reuters.com/reuters/UKBankingFinancial").read() # yahoo rss finance not availabe. use reuters instead
-    with urllib.request.urlopen("http://feeds.reuters.com/reuters/UKBankingFinancial") as url:
+    with urllib.request.urlopen("http://feeds.reuters.com/reuters/UKdomesticNews") as url:
         sauce = url.read().decode()
     soup = bs.BeautifulSoup(sauce, 'xml')
 
@@ -177,17 +193,17 @@ def get_news_industry(industry):
 
         sentence = title + desc
 
-        for ticker in tickers:
-            if ticker in sentence:
+        for company in companies:
+            if company in sentence:
                 signal = True
 
     return(signal)
 
 def get_news_stock(ticker):
-    return news.get_news(ticker)
+    return news.get_sentiment_analysis(ticker)
 
-def get_sentiment_analysis(industry):
-    get_tickers(industry)
+def get_sentiment_analysis(ticker):
+    get_sentiment_analysis
     # TODO: news_scrapper.py here
 
 ################################################## Comparative queries.

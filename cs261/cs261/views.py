@@ -77,49 +77,61 @@ def process(resp):
     # use pass to use default output from dialogflow
     # Switch equivalent for intents
     
+    # DONE
     if intent == 'SpotPrice':
         ticker = resp['result']['parameters']['FTSE100'][0]
         ticker = ticker[:-2]
-        text = util.get_close_spot_price(ticker)
-        text = str(round(text, 2))
+        text = str(round(util.get_close_spot_price(ticker),2))
         text = "The current spot price of " + ticker + " is " + text + " GBP"
 
+    # DONE
     elif intent == 'SpotPrice - AfterOther':
-        text = resp['result']['fulfillment']['speech']
-        pass
+        ticker = resp['result']['parameters']['FTSE100'][0]
+        ticker = ticker[:-2]
+        text = str(round(util.get_close_spot_price(ticker),2))
+        text = "The current spot price of " + ticker + " is " + text + " GBP"
 
+    # DONE
     elif intent == 'StockHigh':
         ticker = resp['result']['parameters']['FTSE100'][0]
         ticker = ticker[:-2]
-        text = util.get_high_spot_price(ticker)
-        text = str(round(text, 2))
+        text = str(round(util.get_high_spot_price(ticker),2))
         text = "The current high price of " + ticker + " is " + text + " GBP"
 
+    # DONE
     elif intent == 'StockHigh - AfterOther':
-        text = resp['result']['fulfillment']['speech']
-        pass
+        ticker = resp['result']['parameters']['FTSE100'][0]
+        ticker = ticker[:-2]
+        text = str(round(util.get_high_spot_price(ticker),2))
+        text = "The current high price of " + ticker + " is " + text + " GBP"
 
+    # DONE
     elif intent == 'StockLow':
         ticker = resp['result']['parameters']['FTSE100'][0]
         ticker = ticker[:-2]
-        text = util.get_low_spot_price(ticker)
-        text = str(round(text, 2))
+        text = str(round(util.get_low_spot_price(ticker),2))
         text = "The current low price of " + ticker + " is " + text + " GBP"
 
+    # DONE
     elif intent == 'StockLow - AfterOther':
-        text = resp['result']['fulfillment']['speech']
-        pass
+        ticker = resp['result']['parameters']['FTSE100'][0]
+        ticker = ticker[:-2]
+        text = str(round(util.get_low_spot_price(ticker),2))
+        text = "The current low price of " + ticker + " is " + text + " GBP"
 
+    # DONE
     elif intent == 'OpenPrice':
         ticker = resp['result']['parameters']['FTSE100'][0]
         ticker = ticker[:-2]
-        text = util.get_open_spot_price(ticker)
-        text = str(round(text, 2))
+        text = str(round(util.get_open_spot_price(ticker),2))
         text = "The current open price of " + ticker + " is " + text + " GBP"
 
+    # DONE
     elif intent == 'OpenPrice - AfterOther':
-        text = resp['result']['fulfillment']['speech']
-        pass
+        ticker = resp['result']['parameters']['FTSE100'][0]
+        ticker = ticker[:-2]
+        text = str(round(util.get_open_spot_price(ticker),2))
+        text = "The current open price of " + ticker + " is " + text + " GBP"
 
     elif intent == 'PriceRatio':
         text = resp['result']['fulfillment']['speech']
@@ -129,28 +141,33 @@ def process(resp):
         text = resp['result']['fulfillment']['speech']
         pass
 
+    # DONE
     elif intent == 'VolumeTraded':
         ticker = resp['result']['parameters']['FTSE100'][0]
         ticker = ticker[:-2]
-        text = util.get_trading_volume(ticker)
-        text = str(round(text, 2))
+        text = str(round(util.get_trading_volume(ticker), 2))
         text = "The current volume of " + ticker + " is " + text
 
+    # DONE
     elif intent == 'VolumeTraded - AfterOther':
-        text = resp['result']['fulfillment']['speech']
-        pass
+        ticker = resp['result']['parameters']['FTSE100'][0]
+        ticker = ticker[:-2]
+        text = str(round(util.get_trading_volume(ticker), 2))
+        text = "The current volume of " + ticker + " is " + text
 
-
+    # DONE
     elif intent == 'AverageVolume':
         ticker = resp['result']['parameters']['FTSE100'][0]
         ticker = ticker[:-2]
-        text = util.get_average_trading_volume(ticker)
-        text = str(round(text, 2))
+        text = str(round(util.get_average_trading_volume(ticker), 2))
         text = "The average volume (weekly) of " + ticker + " is " + text
 
+    # DONE
     elif intent == 'AverageVolume - AfterOther':
-        text = resp['result']['fulfillment']['speech']
-        pass
+        ticker = resp['result']['parameters']['FTSE100'][0]
+        ticker = ticker[:-2]
+        text = str(round(util.get_average_trading_volume(ticker), 2))
+        text = "The average volume (weekly) of " + ticker + " is " + text
 
     elif intent == 'isRising':
         text = resp['result']['fulfillment']['speech']
@@ -168,30 +185,36 @@ def process(resp):
         text = resp['result']['fulfillment']['speech']
         pass
 
+    # DONE
     elif intent == 'PercentChange':
         ticker = resp['result']['parameters']['FTSE100'][0]
         ticker = ticker[:-2]
-        text = util.get_percentage_change(ticker)
-        text = str(round(text, 2))
+        text = str(round(util.get_percentage_change(ticker), 2))
         text = "The percentage change of " + ticker + " is " + text + "%"
 
+    # DONE
     elif intent == 'PercentChange - AfterOther':
-        text = resp['result']['fulfillment']['speech']
-        pass
+        ticker = resp['result']['parameters']['FTSE100'][0]
+        ticker = ticker[:-2]
+        text = str(round(util.get_percentage_change(ticker), 2))
+        text = "The percentage change of " + ticker + " is " + text + "%"
 
+    # DONE
     elif intent == 'ValueChange':
         ticker = resp['result']['parameters']['FTSE100'][0]
         ticker = ticker[:-2]
-        text = util.get_value_change(ticker)
-        text = str(round(text, 2))
+        text = str(round(util.get_value_change(ticker), 2))
         text = "The value change of " + ticker + " is " + text
 
-
+    # DONE
     elif intent == 'ValueChange - AfterOther':
-        text = resp['result']['fulfillment']['speech']
-        pass
+        ticker = resp['result']['parameters']['FTSE100']
+        ticker = ticker[:-2]
+        text = str(round(util.get_value_change(ticker), 2))
+        text = "The value change of " + ticker + " is " + text
 
-    # TODO
+    # DONE
+    # TODO: Think of what to do with news object
     elif intent == 'NewsIntent':
         ticker = resp['result']['parameters']['FTSE100']
         ticker = ticker[:-2]
@@ -207,42 +230,45 @@ def process(resp):
 
         text = articles
 
+    # DONE
     elif intent == 'SpotPriceDate':
         ticker = resp['result']['parameters']['FTSE100']
         ticker = ticker[:-2]
         date = resp['result']['parameters']['date']
-        text = util.get_spot_price_date(ticker, date)
-        text = str(round(text, 2))
+        text = str(round(util.get_spot_price_date(ticker, date), 2))
         text = "The spot price of " + ticker + " in " + date + " is " + text + " GBP"
 
+    # DONE
     elif intent == 'VolumeTradedDate':
         ticker = resp['result']['parameters']['FTSE100']
         ticker = ticker[:-2]
         date = resp['result']['parameters']['date']
-        text = util.get_trading_volume_date(ticker, date)
-        text = str(round(text, 2))
+        text = str(round(util.get_trading_volume_date(ticker, date), 2))
         text = "The volume traded, " + ticker + " in " + date + " is " + text
 
+    # DONE
     elif intent =='StockProfit':
         ticker = resp['result']['parameters']['FTSE100']
         ticker = ticker[:-2]
-        text = util.get_profit(ticker)
-        text = str(round(text, 2))
+        text = str(round(util.get_profit(ticker), 2))
         text = "The raw profit margin of " + ticker + " is " + text
 
+    # DONE
     elif intent == 'StockEPS':
         ticker = resp['result']['parameters']['FTSE100']
         ticker = ticker[:-2]
         text = str(util.get_eps(ticker))
-        text = "The trailing/forward EPS of " + ticker + " is " + text
+        text = "The trailing/forward EPS of " + ticker + " is " + text + " GBP"
 
+    # DONE
     elif intent == 'StockDividend':
         ticker = resp['result']['parameters']['FTSE100']
         ticker = ticker[:-2]
-        text = util.get_dividend(ticker)
-        text = str(round(text, 2))
+        text = str(round(util.get_dividend(ticker), 2))
         text = "The latest stock dividends of " + ticker + " is " + text
 
+# TODO: use web scrapper to get percentage of industry
+    #DONE
     elif intent == 'IndustryIsRising':
         industry = resp['result']['parameters']['Sectors']
         trend = util.get_industry_trend_weekly(industry)
@@ -251,37 +277,43 @@ def process(resp):
         else: 
             text = "No, the industry " + industry + " is falling"
 
+    # DONE
     elif intent == 'IndustryPercentChange':
-        industry = resp['result']['parameters']['Sectors']
-        text = util.get_industry_trend_daily(industry)
-        text = str(round(text, 2))
-        text = "The percentage change of industry: " + industry + " is " + text
+        industry = resp['result']['parameters']['Sector']
+        text = str(round(util.get_industry_trend_daily(industry), 2))
+        text = "The percentage change of industry: " + industry + " is " + text + "%"
 
+    # DONE
     elif intent == 'IndustryRisingStock':
         industry = resp['result']['parameters']['Sectors']
-        text = util.get_tickers_industry_trend(industry, True)
-        text = str(text)
+        text = str(util.get_tickers_industry_trend(industry, True))
         text = "Rising tickers in " + industry + " are " + text
 
+    # DONE
     elif intent == 'IndustryFallingStock':
         industry = resp['result']['parameters']['Sectors']
         text = util.get_tickers_industry_trend(industry, False)
         text = str(text)
         text = "Falling tickers in " + industry + " are " + text
 
+    # DONE
     elif intent == 'IndustryNews':
-        pass
         industry = resp['result']['parameters']['Sectors']
         text = util.get_news_industry(industry)
+        if text == True:
+            text = "Yes, ask me more about the industry."
+        else:
+            text = "No. But Food and Drugs Retailer is in the news (When i was being tested). Try asking me this again"
 
-    # TODO
-    elif intent == 'StockNews': # TODO
+    elif intent == 'StockNews':
         pass
 
-    elif intent == 'SentimentAnalysisStock': # TODO
-        industry = resp['result']['parameters']['Sectors']
-        text = util.get_sentiment_analysis(industry)
 
+    elif intent == 'SentimentAnalysisStock':
+        ticker = resp['result']['parameters']['FTSE100']
+        text = util.get_sentiment_analysis(ticker)
+
+    # DONE
     elif intent == 'CompareStockBetter':
         tickers = []
 
@@ -300,6 +332,7 @@ def process(resp):
         else:
             text = "No, it is doing worse." 
 
+    # DONE
     elif intent == 'CompareStockWeekly':
         tickers = []
 
@@ -313,10 +346,10 @@ def process(resp):
         second = second[:-2]
         tickers.append(second)
 
-        text = util.get_compare_tickers_weekly(tickers)
-        text = str(text)
-        text = text + " is doing better"
+        text = str(util.get_compare_tickers_weekly(tickers))
+        text = text + " is doing better. (5 day trend)"
 
+    # DONE
     elif intent == 'CompareStockToday':
         tickers = []
 
@@ -330,11 +363,11 @@ def process(resp):
         second = second[:-2]
         tickers.append(second)
 
-        text = util.get_compare_tickers_daily(tickers)
-        text = str(text)
-        text = text + " is doing better"
+        text = str(util.get_compare_tickers_daily(tickers))
+        text = text + " is performing better today. (daily)"
 
-    elif intent == 'CompareStockMonthy':
+    # DONE
+    elif intent == 'CompareStockMonthly':
         tickers = []
 
         # is this?
@@ -347,20 +380,24 @@ def process(resp):
         second = second[:-2]
         tickers.append(second)
 
-        text = util.get_compare_tickers_monthly(tickers)
-        text = str(text)
-        text = text + " is doing better"
+        print(first, second, tickers)
+        text = str(util.get_compare_tickers_monthly(tickers))
+        text = text + " is doing better. (monthly)"
 
+    # DONE
     elif intent == 'BestIndustryTicker':
         industry = resp['result']['parameters']['Sectors']
-        text = util.get_best_ticker_in_industry(industry)
-        text = str(text)
-        text = "The best ticker in the industry: " + industry + " is " + text
+        text = str(util.get_best_ticker_in_industry(industry))
+        text = "The best YTD ticker in industry [" + industry + "] is " + text
 
+    # DONE
     elif intent == 'ShouldInvest':
-        text = "No you shouldn't. You should consult a professional investment manager instead of a Chatbot"
-        
+        text = "No you shouldn't. You should consult a professional instead of a Chatbot, but you can ask me which ticker is the best performing in any industry or get news sentiment!"
+    
+    # DEFAULT FOR SMALL TALK
     else: 
         text = resp['result']['fulfillment']['speech']
+
+    # IF text is empty, throw exception
 
     return text

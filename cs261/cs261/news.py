@@ -2,13 +2,13 @@ import bs4 as bs
 import urllib.request
 import json
 
-#from nltk.sentiment.util import *
-#from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.sentiment.util import *
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # mkdir ./nltk_data
 # python -m nltk.downloader
 # Set Download Directory in GUI
-#nltk.data.path.append('./nltk_data/')
+nltk.data.path.append('./nltk_data/')
 
 #ticker = raw_input("Enter Stock Ticker Symbol (i.e. AAPL, FB, TSLA):\n")
 #ticker = "FB"
@@ -43,12 +43,15 @@ def get_news(ticker):
 	return data
 
 
-# Sentiment Intensity Analysis for each individual news article title + brief description
-# can be improved if entire article is used instead?
-#sid = SentimentIntensityAnalyzer()
-#for sentence in sentences:
-#	print(sentence)
-#	ss = sid.polarity_scores(sentence)
-#	for k in sorted(ss):
-#		print('{0}: {1}, '.format(k, ss[k]))
-#	print()
+def get_sentiment_analysis(ticker):
+	articles = get_news(ticker)
+
+	# Sentiment Intensity Analysis for each individual news article title + brief description
+	# can be improved if entire article is used instead?
+	sid = SentimentIntensityAnalyzer()
+	for i in range(0,len(articles)):
+		print(articles[i].desc)
+		#ss = sid.polarity_scores(sentence)
+		#for k in sorted(ss):
+		#	print('{0}: {1}, '.format(k, ss[k]))
+		#print()
