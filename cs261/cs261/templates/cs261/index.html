@@ -11,8 +11,23 @@
         function addBlock(text, useText) {
             useText = useText || false;
             const $block = $('<div class="panel"></div>');
-            useText ? $block.text(text) : $block.append(text);
+
+            // Date
+            var date = new Date(); 
+            var time = "("+date.getDate() + "/"
+                + (date.getMonth()+1)  + "/" 
+                + date.getFullYear() + " @ "  
+                + date.getHours() + ":"  
+                + date.getMinutes() + ":" 
+                + date.getSeconds()+")";
+
+
+            useText ? $block.text(time + " You: " + text) : $block.append(text);
             $('#form').before($block);
+
+            // auto scroll
+            var objDiv = document.getElementById('box');
+            objDiv.scrollTop = objDiv.scrollHeight;
         }
 
         function doQuery() {
@@ -30,7 +45,17 @@
                 console.log(data);
                 $input.parent().removeClass('is-loading');
                 $('.button').attr('disabled', false);
-                addBlock($('<strong>' + data + '</strong>'));
+
+                // Date
+                var date = new Date(); 
+                var time = "("+date.getDate() + "/"
+                    + (date.getMonth()+1)  + "/" 
+                    + date.getFullYear() + " @ "  
+                    + date.getHours() + ":"  
+                    + date.getMinutes() + ":" 
+                    + date.getSeconds()+")";
+
+                addBlock($('<strong>' + time + " Buzz:"+ data + '</strong>'));
                 $input.focus();
             });
 
@@ -43,22 +68,24 @@
                 if(e.key === 'Enter') doQuery(e);
             });
         });
+
     </script>
 {% endblock %}
 
 {% block body %}
 
-<div class="box">
-    <div class="panel" id="form">
-        <div class="field has-addons">
-            <div class="control is-expanded">
-                <input class="input" autofocus maxlength=254 type="text" placeholder="Query">
-            </div>
-            <div class="control">
-                <a class="button is-info">Send</a>
-            </div>
-        </div>
-    </div>
+<div class="box" id="box" style="height: 80vh; overflow-y: scroll;">
+    <div class="panel" id="form" style="position: relative; bottom: 0;">
 
+    </div>
+</div>
+
+<div class="field has-addons">
+    <div class="control is-expanded">
+        <input class="input" autofocus maxlength=254 type="text" placeholder="Query">
+    </div>
+    <div class="control">
+        <a class="button is-info">Send</a>
+    </div>
 </div>
 {% endblock %}
