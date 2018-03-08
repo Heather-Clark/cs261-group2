@@ -46,6 +46,25 @@
             objDiv.scrollTop = objDiv.scrollHeight;
         }
 
+        function makeBuzzResponse(data) {
+            var date = new Date();
+            return $('<article class="media"> \
+                       <figure class="media-left"> \
+                         <p class="image is-64x64"> \
+                           <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t34.0-0/p173x172/28741390_10214323860584612_1902458621_n.png?oh=4af815eafc9ed1a5b441ab77e8f79a02&oe=5AA19530"> \
+                         </p> \
+                       </figure>\
+                       <div class="media-content">\
+                         <div class="content">\
+                           <p>\
+                             <strong>Buzz</strong> <small>@beehive</small> <small>'+date+'</small>\
+                             <br>'+data+'\
+                           </p>\
+                         </div>\
+                       </div>\
+                     </article>');
+        }
+
         function doQuery() {
             const $input = $('input[type="text"]');
             const q = $input.val().trim();
@@ -61,36 +80,7 @@
                 console.log(data);
                 $input.parent().removeClass('is-loading');
                 $('.button').attr('disabled', false);
-
-                // Date
-                var date = new Date();
-                var time = "("+date.getDate() + "/"
-                    + (date.getMonth()+1)  + "/"
-                    + date.getFullYear() + " @ "
-                    + date.getHours() + ":"
-                    + date.getMinutes() + ":"
-                    + date.getSeconds()+")";
-                // message
-               var str = '<article class="media"> \
-                          <figure class="media-left"> \
-                            <p class="image is-64x64"> \
-                              <img src="https://scontent-lht6-1.xx.fbcdn.net/v/t34.0-0/p173x172/28741390_10214323860584612_1902458621_n.png?oh=4af815eafc9ed1a5b441ab77e8f79a02&oe=5AA19530"> \
-                            </p> \
-                          </figure>\
-                          <div class="media-content">\
-                            <div class="content">\
-                              <p>\
-                                <strong>Buzz</strong> <small>@beehive</small> <small>'+date+'</small>\
-                                <br>'+data+'\
-                              </p>\
-                            </div>\
-                          </div>\
-                        </article>';
-
-                addBlock($(
-                    //'<strong>' + time + " Buzz:"+ data + '</strong>'
-                    str
-                ));
+                addBlock(makeBuzzResponse(data));
                 $input.focus();
             });
 
@@ -124,9 +114,22 @@
 
     <div class="box" id="box" style="height: 70vh; overflow-y: scroll;">
         <div class="panel" id="form" style="position: relative; bottom: 0;">
-            {% if queries %}{{queries}}{% endif %}
         </div>
     </div>
+
+{% comment bleh %}
+    <script>addBlock(makeBuzzResponse('You have recently been interesed in \
+{% for f, new in faves.items %}\
+{{f}}{{new}}\
+{% if forloop.revcounter0 > 1%},{%endif%}{% if forloop.revcounter0 == 1%} and {% endif %}\
+{% endfor %}.\
+'));</script>
+{% endcomment %}
+
+{% if fave %}<script>addBlock(makeBuzzResponse('You have recently been interested in {{fave.name}}. Its spot price is {{fave.spotprice}}. Here\'s a related news article: <a href="{{fave.news.link}}">{{fave.news.title}}</a>\
+		<span class="tag is-{% if fave.news.sentiment_name == "positive"%}success{%elif fave.news.sentiment_name == "negative"%}danger{%else%}primary{%endif%}">{{fave.news.sentiment_name}}</span>'));</script>{%endif%}
+
+
 
     <div class="field has-addons">
         <div class="control is-expanded">

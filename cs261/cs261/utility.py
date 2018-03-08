@@ -39,7 +39,7 @@ def get_average_trading_volume(ticker):
     volume = 0
     for i in range(1,5):
         volume += df.iloc[-i,6] # average over 5 days
-    return volume/5 
+    return volume/5
 
 def get_percentage_change(ticker):
     df = pd.read_csv("cs261/static/ftse100tickers/"+ticker+".csv")
@@ -166,7 +166,7 @@ def get_news_industry(industry):
         resp = requests.get('https://en.wikipedia.org/wiki/FTSE_100_Index')
         soup = bs.BeautifulSoup(resp.text, "lxml")
         table = soup.find('table', {'class': 'wikitable sortable'})
-        
+
         for row in table.findAll('tr')[1:]:
             if(row('td')[1].text == ticker):
                 company = row('td')[0].text
@@ -204,7 +204,7 @@ def get_news_stock(ticker):
 
 def get_sentiment_analysis(ticker):
     return news.get_sentiment_analysis(ticker)
-    
+
 
 ################################################## Comparative queries.
 def get_compare_tickers_weekly(tickers, Trend = True):

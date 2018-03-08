@@ -51,7 +51,7 @@ def query(request):
 
             q = models.Query(text=q_text, intent=intent)
             q.save()
-            for j in entities[i]:
+            for j in ents:
                 entity, created = models.Entity.objects.get_or_create(entity_type=i, name=j)
                 q.entities.add(entity)
             q.save()
@@ -76,35 +76,11 @@ def query(request):
 #   to go into the template context.
 def newsContext(resp):
     # List of dictionaries representing news articles
-    articles = []
     ticker = resp['result']['parameters']['FTSE100']
 
     # Cut off the ".L" presumably
     ticker = ticker[:-2]
-    news = util.get_news_stock(ticker)
-
-    sentiments = util.get_sentiment_analysis(ticker)
-    for i in range(0,len(news)):
-
-        sentiment = sentiments[i]['compound']
-        sentiment_name = 'neutral'
-        THRESHOLD = 0.1
-        if sentiment > THRESHOLD:
-            sentiment_name = 'positive'
-        if sentiment < -THRESHOLD:
-            sentiment_name = 'negative'
-
-        articles.append({
-            'title': news[i].title,
-            'description': news[i].desc,
-            'link': news[i].link,
-            'publicationdate': news[i].pubDate,
-
-            'sentiment': sentiment,
-            'sentiment_name': sentiment_name
-            })
-
-    return articles
+    return news_and_sentiment_analysis(ticker)
 
 # 1) Identify intent and parameters
 # 2) Process query
@@ -454,7 +430,33 @@ def process(resp):
 
     return text
 
+def news_and_sentiment_analysis(ticker):
+    articles = []
+    news = util.get_news_stock(ticker)
+    sentiments = util.get_sentiment_analysis(ticker)
+    for i in range(0,len(news)):
 
+        sentiment = sentiments[i]['compound']
+        sentiment_name = 'neutral'
+        THRESHOLD = 0.1
+        if sentiment > THRESHOLD:
+            sentiment_name = 'positive'
+        if sentiment < -THRESHOLD:
+            sentiment_name = 'negative'
+
+        articles.append({
+            'title': news[i].title,
+            'description': news[i].desc,
+            'link': news[i].link,
+            'publicationdate': news[i].pubDate,
+
+            'sentiment': sentiment,
+            'sentiment_name': sentiment_name
+            })
+
+    return articles
+
+from collections import Counter
 def index(request):
 
     context = {}
@@ -464,8 +466,26 @@ def index(request):
     """queries = list(queries)
     context['queries'] = queries"""
 
-    print(queries)
+    entityList = [tuple(x.entities.all()) for x in queries]
+    #print(entityList)
+    count = Counter(entityList)
+    fave = count.most_common(1)
+    #print(fave)
 
+    # the hack way of doing it, that handles tuple faves,
+    # such as (Tesco, III) by just picking the first
 
+    # chop off 'FTSE100/' and '.L'
+    faveticker = str(fave[0][0][0])[8:-2]
+    context['fave'] = {
+        'name': faveticker,
+        'news': news_and_sentiment_analysis(faveticker)[0],
+        'spotprice': util.get_close_spot_price(faveticker),
+        #'isRising': False
+    }
 
+    # The proper way of doing it, that handles tuple faves by sending them all
+    """context['faves'] = {str(x)[8:-2]: util.get_news_stock(str(x)[8:-2])[0] for x in fave[0][0]}
+    print(context['faves'])
+    print(('FTSE100/AZN.L'))"""
     return render(request, 'cs261/index.html', context)
