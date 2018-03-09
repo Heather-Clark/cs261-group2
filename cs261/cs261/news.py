@@ -50,6 +50,7 @@ def get_sentiment_analysis(ticker):
 	# can be improved if entire article is used instead?
 	sentiment = []
 	sid = SentimentIntensityAnalyzer()
+	print(sid)
 	for i in range(0,len(articles)):
 		ss = sid.polarity_scores(articles[i].title +","+ articles[i].desc)
 		sentiment.append(ss)

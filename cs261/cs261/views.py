@@ -476,13 +476,16 @@ def index(request):
     # such as (Tesco, III) by just picking the first
 
     # chop off 'FTSE100/' and '.L'
-    faveticker = str(fave[0][0][0])[8:-2]
-    context['fave'] = {
-        'name': faveticker,
-        'news': news_and_sentiment_analysis(faveticker)[0],
-        'spotprice': util.get_close_spot_price(faveticker),
-        #'isRising': False
-    }
+    try:
+        faveticker = str(fave[0][0][0])[8:-2]
+        context['fave'] = {
+            'name': faveticker,
+            'news': news_and_sentiment_analysis(faveticker)[0],
+            'spotprice': util.get_close_spot_price(faveticker),
+            #'isRising': False
+        }
+    except:
+        pass
 
     # The proper way of doing it, that handles tuple faves by sending them all
     """context['faves'] = {str(x)[8:-2]: util.get_news_stock(str(x)[8:-2])[0] for x in fave[0][0]}
